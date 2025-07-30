@@ -1,0 +1,3497 @@
+[
+  {
+    "H": [
+      "Yoshihide Suga",
+      "PERSON",
+      "Yoshihide Suga"
+    ],
+    "R": "hasRole",
+    "T": [
+      "Prime Minister",
+      "ROLE",
+      "Prime Minister"
+    ],
+    "ID": "7879883714",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Yoshihide Suga",
+      "PERSON",
+      "Yoshihide Suga"
+    ],
+    "R": "basedIn",
+    "T": [
+      "Japan",
+      "LOCATION",
+      "Japan"
+    ],
+    "ID": "7879883714",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Japan",
+      "LOCATION",
+      "Japan"
+    ],
+    "R": "announcedEvent",
+    "T": [
+      "Tokyo Olympics",
+      "EVENT",
+      "Tokyo Olympics"
+    ],
+    "ID": "7879883714",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Tokyo Olympics",
+      "EVENT",
+      "Tokyo Olympics"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "pandemic",
+      "EVENT",
+      "Pandemic"
+    ],
+    "ID": "7879883714",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Yoshihide Suga",
+      "PERSON",
+      "Yoshihide Suga"
+    ],
+    "R": "hasRecommendation",
+    "T": [
+      "transparent investigation",
+      "EVENT",
+      "Investigation"
+    ],
+    "ID": "7879883714",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "World Health Organization",
+      "COMPANY",
+      "World Health Organization"
+    ],
+    "R": "intervenesIn",
+    "T": [
+      "pandemic",
+      "EVENT",
+      "Pandemic"
+    ],
+    "ID": "7879883714",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "World Economic Forum",
+      "COMPANY",
+      "World Economic Forum"
+    ],
+    "R": "announcedEvent",
+    "T": [
+      "virtual meeting",
+      "EVENT",
+      "Meeting"
+    ],
+    "ID": "7879883714",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood Markets"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "trading restrictions",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "7255361556",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood Markets"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "class-action lawsuits",
+      "EVENT",
+      "Litigation"
+    ],
+    "ID": "7255361556",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Shepherd Smith Edwards & Kantas",
+      "COMPANY",
+      "Shepherd Smith Edwards & Kantas"
+    ],
+    "R": "employs",
+    "T": [
+      "Samuel Edwards",
+      "PERSON",
+      "Samuel Edwards"
+    ],
+    "ID": "7255361556",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Samuel Edwards",
+      "PERSON",
+      "Samuel Edwards"
+    ],
+    "R": "hasRole",
+    "T": [
+      "partner",
+      "ROLE",
+      "Partner"
+    ],
+    "ID": "7255361556",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "GameStop",
+      "COMPANY",
+      "GameStop"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "short squeeze",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "7255361556",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "AMC Entertainment",
+      "COMPANY",
+      "AMC Entertainment Holdings"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "short squeeze",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "7255361556",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Elizabeth Warren",
+      "PERSON",
+      "Elizabeth Warren"
+    ],
+    "R": "hasRecommendation",
+    "T": [
+      "regulators to step in",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "7255361556",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Securities and Exchange Commission",
+      "COMPANY",
+      "U.S. Securities and Exchange Commission"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "punish abusive trading",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "7255361556",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Alexis Ohanian",
+      "PERSON",
+      "Alexis Ohanian"
+    ],
+    "R": "hasRole",
+    "T": [
+      "co-founder",
+      "ROLE",
+      "Co-founder"
+    ],
+    "ID": "1924304489",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Reddit",
+      "COMPANY",
+      "Reddit"
+    ],
+    "R": "employs",
+    "T": [
+      "Alexis Ohanian",
+      "PERSON",
+      "Alexis Ohanian"
+    ],
+    "ID": "1924304489",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "GameStop",
+      "COMPANY",
+      "GameStop"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock-buying frenzy",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "1924304489",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "AMC Entertainment Holdings",
+      "COMPANY",
+      "AMC Entertainment Holdings"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock-buying frenzy",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "1924304489",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "BlackBerry Ltd.",
+      "COMPANY",
+      "BlackBerry"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock-buying frenzy",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "1924304489",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Express Inc.",
+      "COMPANY",
+      "Express"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock-buying frenzy",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "1924304489",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Reddit",
+      "COMPANY",
+      "Reddit"
+    ],
+    "R": "owns",
+    "T": [
+      "WallStreetBets",
+      "PRODUCT",
+      "WallStreetBets Forum"
+    ],
+    "ID": "1924304489",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Alexis Ohanian",
+      "PERSON",
+      "Alexis Ohanian"
+    ],
+    "R": "owns",
+    "T": [
+      "776",
+      "COMPANY",
+      "776"
+    ],
+    "ID": "1924304489",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "GameStop",
+      "COMPANY",
+      "GameStop"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock rally",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "5561668817",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood Markets"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "temporarily barring users from purchasing shares",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "5561668817",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Reddit",
+      "COMPANY",
+      "Reddit"
+    ],
+    "R": "owns",
+    "T": [
+      "WallStreetBets",
+      "PRODUCT",
+      "WallStreetBets Forum"
+    ],
+    "ID": "5561668817",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Mitt Romney",
+      "PERSON",
+      "Mitt Romney"
+    ],
+    "R": "hasRole",
+    "T": [
+      "Republican",
+      "ROLE",
+      "Republican"
+    ],
+    "ID": "8115645208",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Donald Trump",
+      "PERSON",
+      "Donald Trump"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "impeachment",
+      "EVENT",
+      "LegalChange"
+    ],
+    "ID": "8115645208",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Joe Biden",
+      "PERSON",
+      "Joe Biden"
+    ],
+    "R": "hasRole",
+    "T": [
+      "president",
+      "ROLE",
+      "President"
+    ],
+    "ID": "8115645208",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "United States",
+      "LOCATION",
+      "United States"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "impeachment",
+      "EVENT",
+      "LegalChange"
+    ],
+    "ID": "8115645208",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "American Airlines Group Inc.",
+      "COMPANY",
+      "American Airlines Group"
+    ],
+    "R": "announcedEvent",
+    "T": [
+      "stock sale",
+      "EVENT",
+      "CorporateAction"
+    ],
+    "ID": "4952049269",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "American Airlines Group Inc.",
+      "COMPANY",
+      "American Airlines Group"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock surge",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "4952049269",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Cowen",
+      "COMPANY",
+      "Cowen Inc."
+    ],
+    "R": "employs",
+    "T": [
+      "Helane Becker",
+      "PERSON",
+      "Helane Becker"
+    ],
+    "ID": "4952049269",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Helane Becker",
+      "PERSON",
+      "Helane Becker"
+    ],
+    "R": "hasRecommendation",
+    "T": [
+      "equity offering",
+      "FINANCIAL_INSTRUMENT",
+      "Equity Offering"
+    ],
+    "ID": "4952049269",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Bank of America",
+      "COMPANY",
+      "Bank of America"
+    ],
+    "R": "hasRecommendation",
+    "T": [
+      "stock drop",
+      "EVENT",
+      "PriceDrop"
+    ],
+    "ID": "7570560061",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Bank of America",
+      "COMPANY",
+      "Bank of America"
+    ],
+    "R": "employs",
+    "T": [
+      "Michael Hartnett",
+      "PERSON",
+      "Michael Hartnett"
+    ],
+    "ID": "7570560061",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Michael Hartnett",
+      "PERSON",
+      "Michael Hartnett"
+    ],
+    "R": "hasRole",
+    "T": [
+      "chief investment strategist",
+      "ROLE",
+      "Chief Investment Strategist"
+    ],
+    "ID": "7570560061",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Federal Reserve",
+      "COMPANY",
+      "Federal Reserve"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "monetary policy",
+      "EVENT",
+      "MonetaryPolicy"
+    ],
+    "ID": "7570560061",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "China",
+      "LOCATION",
+      "China"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "liquidity tightening",
+      "EVENT",
+      "MonetaryPolicy"
+    ],
+    "ID": "7570560061",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "GameStop",
+      "COMPANY",
+      "GameStop"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "short squeeze",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "7570560061",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "AMC Entertainment",
+      "COMPANY",
+      "AMC Entertainment Holdings"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "short squeeze",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "7570560061",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Reddit",
+      "COMPANY",
+      "Reddit"
+    ],
+    "R": "owns",
+    "T": [
+      "WallStreetBets",
+      "PRODUCT",
+      "WallStreetBets Forum"
+    ],
+    "ID": "7570560061",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Anthony Fauci",
+      "PERSON",
+      "Anthony Fauci"
+    ],
+    "R": "hasRole",
+    "T": [
+      "public health expert",
+      "ROLE",
+      "Public Health Expert"
+    ],
+    "ID": "4236538926",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Biden administration",
+      "COMPANY",
+      "Biden Administration"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "vaccinating younger children",
+      "EVENT",
+      "PublicHealthCampaign"
+    ],
+    "ID": "4236538926",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Pfizer",
+      "COMPANY",
+      "Pfizer Inc."
+    ],
+    "R": "produces",
+    "T": [
+      "Pfizer-BioNTech vaccine",
+      "PRODUCT",
+      "Pfizer-BioNTech COVID-19 Vaccine"
+    ],
+    "ID": "4236538926",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "BioNTech",
+      "COMPANY",
+      "BioNTech"
+    ],
+    "R": "produces",
+    "T": [
+      "Pfizer-BioNTech vaccine",
+      "PRODUCT",
+      "Pfizer-BioNTech COVID-19 Vaccine"
+    ],
+    "ID": "4236538926",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Moderna",
+      "COMPANY",
+      "Moderna"
+    ],
+    "R": "produces",
+    "T": [
+      "Moderna vaccine",
+      "PRODUCT",
+      "Moderna COVID-19 Vaccine"
+    ],
+    "ID": "4236538926",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "European Medicines Agency",
+      "COMPANY",
+      "European Medicines Agency"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "vaccine authorization",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "709559125",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "European Medicines Agency",
+      "COMPANY",
+      "European Medicines Agency"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "AstraZeneca COVID-19 vaccine",
+      "PRODUCT",
+      "AstraZeneca COVID-19 Vaccine"
+    ],
+    "ID": "709559125",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "AstraZeneca",
+      "COMPANY",
+      "AstraZeneca"
+    ],
+    "R": "produces",
+    "T": [
+      "AstraZeneca COVID-19 vaccine",
+      "PRODUCT",
+      "AstraZeneca COVID-19 Vaccine"
+    ],
+    "ID": "709559125",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "University of Oxford",
+      "COMPANY",
+      "University of Oxford"
+    ],
+    "R": "produces",
+    "T": [
+      "AstraZeneca COVID-19 vaccine",
+      "PRODUCT",
+      "AstraZeneca COVID-19 Vaccine"
+    ],
+    "ID": "709559125",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "European Medicines Agency",
+      "COMPANY",
+      "European Medicines Agency"
+    ],
+    "R": "employs",
+    "T": [
+      "Emer Cooke",
+      "PERSON",
+      "Emer Cooke"
+    ],
+    "ID": "709559125",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Emer Cooke",
+      "PERSON",
+      "Emer Cooke"
+    ],
+    "R": "hasRole",
+    "T": [
+      "executive director",
+      "ROLE",
+      "Executive Director"
+    ],
+    "ID": "709559125",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "European Union",
+      "LOCATION",
+      "European Union"
+    ],
+    "R": "acquires",
+    "T": [
+      "AstraZeneca COVID-19 vaccine",
+      "PRODUCT",
+      "AstraZeneca COVID-19 Vaccine"
+    ],
+    "ID": "709559125",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "AstraZeneca",
+      "COMPANY",
+      "AstraZeneca"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "cut supplies",
+      "EVENT",
+      "SupplyChainDisruption"
+    ],
+    "ID": "709559125",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "European Union",
+      "LOCATION",
+      "European Union"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "legal action",
+      "EVENT",
+      "Litigation"
+    ],
+    "ID": "709559125",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Pascal Soriot",
+      "PERSON",
+      "Pascal Soriot"
+    ],
+    "R": "hasRole",
+    "T": [
+      "Chief Executive",
+      "ROLE",
+      "Chief Executive Officer"
+    ],
+    "ID": "709559125",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "AstraZeneca",
+      "COMPANY",
+      "AstraZeneca"
+    ],
+    "R": "employs",
+    "T": [
+      "Pascal Soriot",
+      "PERSON",
+      "Pascal Soriot"
+    ],
+    "ID": "709559125",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "European Commission",
+      "COMPANY",
+      "European Commission"
+    ],
+    "R": "announcedEvent",
+    "T": [
+      "published contract",
+      "EVENT",
+      "CorporateAction"
+    ],
+    "ID": "709559125",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "European Commission",
+      "COMPANY",
+      "European Commission"
+    ],
+    "R": "employs",
+    "T": [
+      "Ursula von der Leyen",
+      "PERSON",
+      "Ursula von der Leyen"
+    ],
+    "ID": "709559125",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Ursula von der Leyen",
+      "PERSON",
+      "Ursula von der Leyen"
+    ],
+    "R": "hasRole",
+    "T": [
+      "President",
+      "ROLE",
+      "President"
+    ],
+    "ID": "709559125",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "European Union",
+      "LOCATION",
+      "European Union"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "legal action",
+      "EVENT",
+      "Litigation"
+    ],
+    "ID": "1488441453",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "European Union",
+      "LOCATION",
+      "European Union"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "vaccine shortage",
+      "EVENT",
+      "SupplyChainDisruption"
+    ],
+    "ID": "1488441453",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "AstraZeneca",
+      "COMPANY",
+      "AstraZeneca"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "delivery holdups",
+      "EVENT",
+      "SupplyChainDisruption"
+    ],
+    "ID": "1488441453",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Pfizer",
+      "COMPANY",
+      "Pfizer Inc."
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "delivery holdups",
+      "EVENT",
+      "SupplyChainDisruption"
+    ],
+    "ID": "1488441453",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "European Council",
+      "COMPANY",
+      "European Council"
+    ],
+    "R": "employs",
+    "T": [
+      "Charles Michel",
+      "PERSON",
+      "Charles Michel"
+    ],
+    "ID": "1488441453",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Charles Michel",
+      "PERSON",
+      "Charles Michel"
+    ],
+    "R": "hasRole",
+    "T": [
+      "president",
+      "ROLE",
+      "President"
+    ],
+    "ID": "1488441453",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "France",
+      "LOCATION",
+      "France"
+    ],
+    "R": "announcedEvent",
+    "T": [
+      "suspend COVID-19 vaccinations",
+      "EVENT",
+      "PublicHealthCampaign"
+    ],
+    "ID": "1488441453",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Portugal",
+      "LOCATION",
+      "Portugal"
+    ],
+    "R": "announcedEvent",
+    "T": [
+      "suspend COVID-19 vaccinations",
+      "EVENT",
+      "PublicHealthCampaign"
+    ],
+    "ID": "1488441453",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Spain",
+      "LOCATION",
+      "Spain"
+    ],
+    "R": "announcedEvent",
+    "T": [
+      "suspend COVID-19 vaccinations",
+      "EVENT",
+      "PublicHealthCampaign"
+    ],
+    "ID": "1488441453",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "European Medicines Agency",
+      "COMPANY",
+      "European Medicines Agency"
+    ],
+    "R": "announcedEvent",
+    "T": [
+      "emergency authorization",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "1488441453",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Germany",
+      "LOCATION",
+      "Germany"
+    ],
+    "R": "hasRecommendation",
+    "T": [
+      "AstraZeneca-Oxford vaccine",
+      "PRODUCT",
+      "AstraZeneca COVID-19 Vaccine"
+    ],
+    "ID": "1488441453",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Moderna",
+      "COMPANY",
+      "Moderna"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "deliver 20% fewer vaccines to Italy",
+      "EVENT",
+      "SupplyChainDisruption"
+    ],
+    "ID": "1488441453",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Germany",
+      "LOCATION",
+      "Germany"
+    ],
+    "R": "employs",
+    "T": [
+      "Jens Spahn",
+      "PERSON",
+      "Jens Spahn"
+    ],
+    "ID": "1488441453",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Jens Spahn",
+      "PERSON",
+      "Jens Spahn"
+    ],
+    "R": "hasRole",
+    "T": [
+      "health minister",
+      "ROLE",
+      "Health Minister"
+    ],
+    "ID": "1488441453",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "European Commission",
+      "COMPANY",
+      "European Commission"
+    ],
+    "R": "employs",
+    "T": [
+      "Ursula von der Leyen",
+      "PERSON",
+      "Ursula von der Leyen"
+    ],
+    "ID": "1488441453",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Ursula von der Leyen",
+      "PERSON",
+      "Ursula von der Leyen"
+    ],
+    "R": "hasRole",
+    "T": [
+      "president",
+      "ROLE",
+      "President"
+    ],
+    "ID": "1488441453",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Novavax",
+      "COMPANY",
+      "Novavax"
+    ],
+    "R": "produces",
+    "T": [
+      "Novavax vaccine",
+      "PRODUCT",
+      "Novavax COVID-19 Vaccine"
+    ],
+    "ID": "1488441453",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "U.K.",
+      "LOCATION",
+      "United Kingdom"
+    ],
+    "R": "announcedEvent",
+    "T": [
+      "vaccine approval",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "1488441453",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "GameStop Corp.",
+      "COMPANY",
+      "GameStop"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock surge",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "7649978008",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "AMC Entertainment Inc.",
+      "COMPANY",
+      "AMC Entertainment Holdings"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock surge",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "7649978008",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood Markets"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "trading restrictions",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "7649978008",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Siebert Financial Corp.",
+      "COMPANY",
+      "Siebert Financial Corp."
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock surge",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "7649978008",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "BB Liquidating Inc.",
+      "COMPANY",
+      "BB Liquidating Inc."
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock surge",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "7649978008",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Securities and Exchange Commission",
+      "COMPANY",
+      "U.S. Securities and Exchange Commission"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "monitoring price volatility",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "7649978008",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Securities and Exchange Commission",
+      "COMPANY",
+      "U.S. Securities and Exchange Commission"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "aggressive action",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "7649978008",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Citron Research",
+      "COMPANY",
+      "Citron Research"
+    ],
+    "R": "employs",
+    "T": [
+      "Andrew Left",
+      "PERSON",
+      "Andrew Left"
+    ],
+    "ID": "7649978008",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Andrew Left",
+      "PERSON",
+      "Andrew Left"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "stop writing reports on stocks",
+      "EVENT",
+      "CorporateAction"
+    ],
+    "ID": "7649978008",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Reddit",
+      "COMPANY",
+      "Reddit"
+    ],
+    "R": "owns",
+    "T": [
+      "WallStreetBets",
+      "PRODUCT",
+      "WallStreetBets Forum"
+    ],
+    "ID": "7649978008",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "GameStop",
+      "COMPANY",
+      "GameStop"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock surge",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "8894166159",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "SPDR S&P Retail ETF",
+      "FINANCIAL_INSTRUMENT",
+      "SPDR S&P Retail ETF"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "GameStop stock surge",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "8894166159",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Robinhood Markets",
+      "COMPANY",
+      "Robinhood Markets"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "lift certain restrictions on trading",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "8894166159",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "AMC Entertainment Holdings",
+      "COMPANY",
+      "AMC Entertainment Holdings"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock surge",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "8894166159",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Reddit",
+      "COMPANY",
+      "Reddit"
+    ],
+    "R": "owns",
+    "T": [
+      "WallStreetBets",
+      "PRODUCT",
+      "WallStreetBets Forum"
+    ],
+    "ID": "8894166159",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Discord",
+      "COMPANY",
+      "Discord Inc."
+    ],
+    "R": "produces",
+    "T": [
+      "Discord servers",
+      "PRODUCT",
+      "Discord Servers"
+    ],
+    "ID": "8894166159",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Dow Jones Industrial Average",
+      "FINANCIAL_INSTRUMENT",
+      "Dow Jones Industrial Average"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "market tumble",
+      "EVENT",
+      "PriceDrop"
+    ],
+    "ID": "8894166159",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "S&P 500 index",
+      "FINANCIAL_INSTRUMENT",
+      "S&P 500 Index"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "market tumble",
+      "EVENT",
+      "PriceDrop"
+    ],
+    "ID": "8894166159",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Gold futures",
+      "FINANCIAL_INSTRUMENT",
+      "Gold Futures"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "GameStop/Reddit developments",
+      "EVENT",
+      "VolatilitySpike"
+    ],
+    "ID": "9846326248",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "FXTM",
+      "COMPANY",
+      "FXTM"
+    ],
+    "R": "employs",
+    "T": [
+      "Lukman Otunuga",
+      "PERSON",
+      "Lukman Otunuga"
+    ],
+    "ID": "9846326248",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Lukman Otunuga",
+      "PERSON",
+      "Lukman Otunuga"
+    ],
+    "R": "hasRole",
+    "T": [
+      "senior research analyst",
+      "ROLE",
+      "Senior Research Analyst"
+    ],
+    "ID": "9846326248",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "GameStop Corp.",
+      "COMPANY",
+      "GameStop"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock surge",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "9846326248",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "AMC Entertainment Holdings Inc.",
+      "COMPANY",
+      "AMC Entertainment Holdings"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock surge",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "9846326248",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Robinhood Markets",
+      "COMPANY",
+      "Robinhood Markets"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "reinstate some trading",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "9846326248",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Silver futures",
+      "FINANCIAL_INSTRUMENT",
+      "Silver Futures"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "Reddit user suggestion",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "9846326248",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "ThinkMarkets",
+      "COMPANY",
+      "ThinkMarkets"
+    ],
+    "R": "employs",
+    "T": [
+      "Fawad Razaqzada",
+      "PERSON",
+      "Fawad Razaqzada"
+    ],
+    "ID": "9846326248",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Fawad Razaqzada",
+      "PERSON",
+      "Fawad Razaqzada"
+    ],
+    "R": "hasRole",
+    "T": [
+      "market analyst",
+      "ROLE",
+      "Market Analyst"
+    ],
+    "ID": "9846326248",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Johnson & Johnson",
+      "COMPANY",
+      "Johnson & Johnson"
+    ],
+    "R": "produces",
+    "T": [
+      "Johnson & Johnson vaccine",
+      "PRODUCT",
+      "Johnson & Johnson COVID-19 Vaccine"
+    ],
+    "ID": "9846326248",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood Markets"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "restricting trading",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "5642030371",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "GameStop Corp.",
+      "COMPANY",
+      "GameStop"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "short squeeze",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "5642030371",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "WeBull Financial LLC",
+      "COMPANY",
+      "Webull Financial LLC"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "restrict trades",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "5642030371",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Depository Trust & Clearing Corp.",
+      "COMPANY",
+      "Depository Trust & Clearing Corporation"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "increase collateral",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "5642030371",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood Markets"
+    ],
+    "R": "acquires",
+    "T": [
+      "credit lines",
+      "FINANCIAL_INSTRUMENT",
+      "Credit Line"
+    ],
+    "ID": "5642030371",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood Markets"
+    ],
+    "R": "acquires",
+    "T": [
+      "$1 billion",
+      "FINANCIAL_INSTRUMENT",
+      "Capital"
+    ],
+    "ID": "5642030371",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Carnegie Mellon University\u2019s Tepper School of Business",
+      "COMPANY",
+      "Carnegie Mellon University Tepper School of Business"
+    ],
+    "R": "employs",
+    "T": [
+      "Chester Spatt",
+      "PERSON",
+      "Chester Spatt"
+    ],
+    "ID": "5642030371",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Chester Spatt",
+      "PERSON",
+      "Chester Spatt"
+    ],
+    "R": "hasRole",
+    "T": [
+      "professor of finance",
+      "ROLE",
+      "Professor of Finance"
+    ],
+    "ID": "5642030371",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Chester Spatt",
+      "PERSON",
+      "Chester Spatt"
+    ],
+    "R": "hasRole",
+    "T": [
+      "former chief economist",
+      "ROLE",
+      "Chief Economist"
+    ],
+    "ID": "5642030371",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Deutsche Bank",
+      "COMPANY",
+      "Deutsche Bank"
+    ],
+    "R": "employs",
+    "T": [
+      "Jim Reid",
+      "PERSON",
+      "Jim Reid"
+    ],
+    "ID": "5642030371",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Jim Reid",
+      "PERSON",
+      "Jim Reid"
+    ],
+    "R": "hasRole",
+    "T": [
+      "macro strategist",
+      "ROLE",
+      "Macro Strategist"
+    ],
+    "ID": "5642030371",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Reddit",
+      "COMPANY",
+      "Reddit"
+    ],
+    "R": "owns",
+    "T": [
+      "WallStreetBets",
+      "PRODUCT",
+      "WallStreetBets Forum"
+    ],
+    "ID": "5642030371",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Dow Jones Industrial Average",
+      "FINANCIAL_INSTRUMENT",
+      "Dow Jones Industrial Average"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "market selloff",
+      "EVENT",
+      "PriceDrop"
+    ],
+    "ID": "5642030371",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "S&P 500",
+      "FINANCIAL_INSTRUMENT",
+      "S&P 500 Index"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "market selloff",
+      "EVENT",
+      "PriceDrop"
+    ],
+    "ID": "5642030371",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Levi & Strauss Co.",
+      "COMPANY",
+      "Levi Strauss & Co."
+    ],
+    "R": "employs",
+    "T": [
+      "Chip Bergh",
+      "PERSON",
+      "Chip Bergh"
+    ],
+    "ID": "9806603842",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Chip Bergh",
+      "PERSON",
+      "Chip Bergh"
+    ],
+    "R": "hasRole",
+    "T": [
+      "Chief Executive",
+      "ROLE",
+      "Chief Executive Officer"
+    ],
+    "ID": "9806603842",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Levi & Strauss Co.",
+      "COMPANY",
+      "Levi Strauss & Co."
+    ],
+    "R": "produces",
+    "T": [
+      "jeans",
+      "PRODUCT",
+      "Jeans"
+    ],
+    "ID": "9806603842",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Levi & Strauss Co.",
+      "COMPANY",
+      "Levi Strauss & Co."
+    ],
+    "R": "produces",
+    "T": [
+      "shirts",
+      "PRODUCT",
+      "Shirts"
+    ],
+    "ID": "9806603842",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Levi & Strauss Co.",
+      "COMPANY",
+      "Levi Strauss & Co."
+    ],
+    "R": "produces",
+    "T": [
+      "accessories",
+      "PRODUCT",
+      "Accessories"
+    ],
+    "ID": "9806603842",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Levi & Strauss Co.",
+      "COMPANY",
+      "Levi Strauss & Co."
+    ],
+    "R": "produces",
+    "T": [
+      "shoes",
+      "PRODUCT",
+      "Shoes"
+    ],
+    "ID": "9806603842",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Levi & Strauss Co.",
+      "COMPANY",
+      "Levi Strauss & Co."
+    ],
+    "R": "produces",
+    "T": [
+      "chino pants",
+      "PRODUCT",
+      "Chino Pants"
+    ],
+    "ID": "9806603842",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Levi & Strauss Co.",
+      "COMPANY",
+      "Levi Strauss & Co."
+    ],
+    "R": "announcedEvent",
+    "T": [
+      "quarterly earnings report",
+      "EVENT",
+      "EarningsAnnouncement"
+    ],
+    "ID": "9806603842",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "UBS",
+      "COMPANY",
+      "UBS"
+    ],
+    "R": "hasRecommendation",
+    "T": [
+      "Levi & Strauss Co. stock",
+      "FINANCIAL_INSTRUMENT",
+      "Levi Strauss & Co. Stock"
+    ],
+    "ID": "9806603842",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "UBS",
+      "COMPANY",
+      "UBS"
+    ],
+    "R": "employs",
+    "T": [
+      "Jay Sole",
+      "PERSON",
+      "Jay Sole"
+    ],
+    "ID": "9806603842",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Levi & Strauss Co.",
+      "COMPANY",
+      "Levi Strauss & Co."
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "COVID-19 pandemic",
+      "EVENT",
+      "Pandemic"
+    ],
+    "ID": "9806603842",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood Markets"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "refused or limited trading",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "4221295138",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "GameStop",
+      "COMPANY",
+      "GameStop"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock surge",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "4221295138",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "AMC Entertainment",
+      "COMPANY",
+      "AMC Entertainment Holdings"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock surge",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "4221295138",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood Markets"
+    ],
+    "R": "acquires",
+    "T": [
+      "credit lines",
+      "FINANCIAL_INSTRUMENT",
+      "Credit Line"
+    ],
+    "ID": "4221295138",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood Markets"
+    ],
+    "R": "acquires",
+    "T": [
+      "$1 billion",
+      "FINANCIAL_INSTRUMENT",
+      "Capital"
+    ],
+    "ID": "4221295138",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood Markets"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "allow limited buying",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "4221295138",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Novavax",
+      "COMPANY",
+      "Novavax"
+    ],
+    "R": "produces",
+    "T": [
+      "COVID-19 vaccine",
+      "PRODUCT",
+      "Novavax COVID-19 Vaccine"
+    ],
+    "ID": "4221295138",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Johnson & Johnson",
+      "COMPANY",
+      "Johnson & Johnson"
+    ],
+    "R": "produces",
+    "T": [
+      "single-dose coronavirus vaccine",
+      "PRODUCT",
+      "Johnson & Johnson COVID-19 Vaccine"
+    ],
+    "ID": "4221295138",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Pfizer",
+      "COMPANY",
+      "Pfizer Inc."
+    ],
+    "R": "produces",
+    "T": [
+      "vaccine",
+      "PRODUCT",
+      "Pfizer-BioNTech COVID-19 Vaccine"
+    ],
+    "ID": "4221295138",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Moderna",
+      "COMPANY",
+      "Moderna"
+    ],
+    "R": "produces",
+    "T": [
+      "vaccine",
+      "PRODUCT",
+      "Moderna COVID-19 Vaccine"
+    ],
+    "ID": "4221295138",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Visa Inc.",
+      "COMPANY",
+      "Visa Inc."
+    ],
+    "R": "announcedEvent",
+    "T": [
+      "earnings",
+      "EVENT",
+      "EarningsAnnouncement"
+    ],
+    "ID": "4221295138",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Visa Inc.",
+      "COMPANY",
+      "Visa Inc."
+    ],
+    "R": "announcedEvent",
+    "T": [
+      "$8 billion buyback program",
+      "EVENT",
+      "CorporateAction"
+    ],
+    "ID": "4221295138",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Caterpillar",
+      "COMPANY",
+      "Caterpillar Inc."
+    ],
+    "R": "announcedEvent",
+    "T": [
+      "profit",
+      "EVENT",
+      "EarningsAnnouncement"
+    ],
+    "ID": "4221295138",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Western Digital",
+      "COMPANY",
+      "Western Digital"
+    ],
+    "R": "announcedEvent",
+    "T": [
+      "earnings",
+      "EVENT",
+      "EarningsAnnouncement"
+    ],
+    "ID": "4221295138",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Tesla",
+      "COMPANY",
+      "Tesla Inc."
+    ],
+    "R": "employs",
+    "T": [
+      "Elon Musk",
+      "PERSON",
+      "Elon Musk"
+    ],
+    "ID": "4221295138",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Elon Musk",
+      "PERSON",
+      "Elon Musk"
+    ],
+    "R": "hasRole",
+    "T": [
+      "CEO",
+      "ROLE",
+      "Chief Executive Officer"
+    ],
+    "ID": "4221295138",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Spotify",
+      "COMPANY",
+      "Spotify Technology S.A."
+    ],
+    "R": "produces",
+    "T": [
+      "patented technology",
+      "PRODUCT",
+      "Technology"
+    ],
+    "ID": "4221295138",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Silver Lake",
+      "COMPANY",
+      "Silver Lake"
+    ],
+    "R": "acquires",
+    "T": [
+      "AMC Entertainment Holdings Inc. stock",
+      "FINANCIAL_INSTRUMENT",
+      "AMC Entertainment Holdings Inc. Common Stock"
+    ],
+    "ID": "9086763767",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Silver Lake",
+      "COMPANY",
+      "Silver Lake"
+    ],
+    "R": "owns",
+    "T": [
+      "AMC debt",
+      "FINANCIAL_INSTRUMENT",
+      "AMC Entertainment Holdings Inc. Convertible Bond"
+    ],
+    "ID": "9086763767",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Silver Lake",
+      "COMPANY",
+      "Silver Lake"
+    ],
+    "R": "basedIn",
+    "T": [
+      "Menlo Park, Calif.",
+      "LOCATION",
+      "Menlo Park, California, United States"
+    ],
+    "ID": "9086763767",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "trading restriction",
+      "EVENT",
+      "TradingRestriction"
+    ],
+    "ID": "9086763767",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Lehmann Livian Fridson Advisors",
+      "COMPANY",
+      "Lehmann Livian Fridson Advisors"
+    ],
+    "R": "employs",
+    "T": [
+      "Marty Fridson",
+      "PERSON",
+      "Marty Fridson"
+    ],
+    "ID": "9086763767",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Marty Fridson",
+      "PERSON",
+      "Marty Fridson"
+    ],
+    "R": "hasRole",
+    "T": [
+      "chief investment officer",
+      "ROLE",
+      "Chief Investment Officer"
+    ],
+    "ID": "9086763767",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "AMC Entertainment Holdings Inc. stock",
+      "FINANCIAL_INSTRUMENT",
+      "AMC Entertainment Holdings Inc. Common Stock"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock market frenzy",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "9086763767",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "GameStop Corp. stock",
+      "FINANCIAL_INSTRUMENT",
+      "GameStop Corp. Common Stock"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stock market frenzy",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "9086763767",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Dow Jones Industrial Average",
+      "FINANCIAL_INSTRUMENT",
+      "Dow Jones Industrial Average"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stocks tumbled",
+      "EVENT",
+      "PriceDrop"
+    ],
+    "ID": "145818889",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "S&P 500 index",
+      "FINANCIAL_INSTRUMENT",
+      "S&P 500 Index"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stocks tumbled",
+      "EVENT",
+      "PriceDrop"
+    ],
+    "ID": "145818889",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Nasdaq Composite Index",
+      "FINANCIAL_INSTRUMENT",
+      "Nasdaq Composite Index"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "stocks tumbled",
+      "EVENT",
+      "PriceDrop"
+    ],
+    "ID": "145818889",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "limited purchases of GameStop",
+      "EVENT",
+      "TradingRestriction"
+    ],
+    "ID": "145818889",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood"
+    ],
+    "R": "announcedEvent",
+    "T": [
+      "capital raise",
+      "EVENT",
+      "CorporateFinancing"
+    ],
+    "ID": "145818889",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Charles Schwab & Co.",
+      "COMPANY",
+      "Charles Schwab & Co."
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "adjusted margin requirements",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "145818889",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "TD Ameritrade",
+      "COMPANY",
+      "TD Ameritrade"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "adjusted margin requirements",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "145818889",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Glenmede",
+      "COMPANY",
+      "Glenmede"
+    ],
+    "R": "employs",
+    "T": [
+      "Michael Reynolds",
+      "PERSON",
+      "Michael Reynolds"
+    ],
+    "ID": "145818889",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Michael Reynolds",
+      "PERSON",
+      "Michael Reynolds"
+    ],
+    "R": "hasRole",
+    "T": [
+      "investment strategy officer",
+      "ROLE",
+      "Investment Strategy Officer"
+    ],
+    "ID": "145818889",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "CIBC Private Wealth",
+      "COMPANY",
+      "CIBC Private Wealth"
+    ],
+    "R": "employs",
+    "T": [
+      "David Donabedian",
+      "PERSON",
+      "David Donabedian"
+    ],
+    "ID": "145818889",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "David Donabedian",
+      "PERSON",
+      "David Donabedian"
+    ],
+    "R": "hasRole",
+    "T": [
+      "chief investment officer",
+      "ROLE",
+      "Chief Investment Officer"
+    ],
+    "ID": "145818889",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Securities and Exchange Commission",
+      "COMPANY",
+      "Securities and Exchange Commission"
+    ],
+    "R": "intervenesIn",
+    "T": [
+      "stock volatility",
+      "EVENT",
+      "VolatilitySpike"
+    ],
+    "ID": "145818889",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Johnson & Johnson",
+      "COMPANY",
+      "Johnson & Johnson"
+    ],
+    "R": "produces",
+    "T": [
+      "COVID vaccine candidate",
+      "PRODUCT",
+      "COVID-19 Vaccine"
+    ],
+    "ID": "145818889",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "United States",
+      "LOCATION",
+      "United States"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "COVID-19 pandemic",
+      "EVENT",
+      "Pandemic"
+    ],
+    "ID": "145818889",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "United States",
+      "LOCATION",
+      "United States"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "coronavirus relief package",
+      "EVENT",
+      "FiscalPolicy"
+    ],
+    "ID": "145818889",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Janet Yellen",
+      "PERSON",
+      "Janet Yellen"
+    ],
+    "R": "hasRole",
+    "T": [
+      "U.S. Treasury Secretary",
+      "ROLE",
+      "Secretary of the Treasury"
+    ],
+    "ID": "145818889",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Federated Hermes",
+      "COMPANY",
+      "Federated Hermes"
+    ],
+    "R": "employs",
+    "T": [
+      "Steve Chiavarone",
+      "PERSON",
+      "Steve Chiavarone"
+    ],
+    "ID": "145818889",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Steve Chiavarone",
+      "PERSON",
+      "Steve Chiavarone"
+    ],
+    "R": "hasRole",
+    "T": [
+      "portfolio manager",
+      "ROLE",
+      "Portfolio Manager"
+    ],
+    "ID": "145818889",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Steve Chiavarone",
+      "PERSON",
+      "Steve Chiavarone"
+    ],
+    "R": "hasRole",
+    "T": [
+      "equity strategist",
+      "ROLE",
+      "Equity Strategist"
+    ],
+    "ID": "145818889",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Oil prices",
+      "FINANCIAL_INSTRUMENT",
+      "Crude Oil Futures"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "slipped",
+      "EVENT",
+      "PriceDrop"
+    ],
+    "ID": "145818889",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Gold futures",
+      "FINANCIAL_INSTRUMENT",
+      "Gold Futures"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "rose",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "145818889",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "10-year Treasury note",
+      "FINANCIAL_INSTRUMENT",
+      "US Treasury Note 10-Year"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "yield climbed",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "145818889",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "ICE U.S. Dollar Index",
+      "FINANCIAL_INSTRUMENT",
+      "ICE U.S. Dollar Index"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "was up",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "145818889",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Stoxx 600 stock index",
+      "FINANCIAL_INSTRUMENT",
+      "STOXX Europe 600 Index"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "closed lower",
+      "EVENT",
+      "PriceDrop"
+    ],
+    "ID": "145818889",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "FTSE 100",
+      "FINANCIAL_INSTRUMENT",
+      "FTSE 100 Index"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "declined",
+      "EVENT",
+      "PriceDrop"
+    ],
+    "ID": "145818889",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Shanghai Composite",
+      "FINANCIAL_INSTRUMENT",
+      "Shanghai Composite Index"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "fell",
+      "EVENT",
+      "PriceDrop"
+    ],
+    "ID": "145818889",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Hang Seng Index",
+      "FINANCIAL_INSTRUMENT",
+      "Hang Seng Index"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "shed",
+      "EVENT",
+      "PriceDrop"
+    ],
+    "ID": "145818889",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Nikkei 225 index",
+      "FINANCIAL_INSTRUMENT",
+      "Nikkei 225 Index"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "retreated",
+      "EVENT",
+      "PriceDrop"
+    ],
+    "ID": "145818889",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Securities and Exchange Commission",
+      "COMPANY",
+      "Securities and Exchange Commission"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "enforcement action",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "7950610330",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "GameStop Corp. stock",
+      "FINANCIAL_INSTRUMENT",
+      "GameStop Corp. Common Stock"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "extreme price volatility",
+      "EVENT",
+      "VolatilitySpike"
+    ],
+    "ID": "7950610330",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "AMC Entertainment Holdings Inc. stock",
+      "FINANCIAL_INSTRUMENT",
+      "AMC Entertainment Holdings Inc. Common Stock"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "extreme price volatility",
+      "EVENT",
+      "VolatilitySpike"
+    ],
+    "ID": "7950610330",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Nokia Corp. stock",
+      "FINANCIAL_INSTRUMENT",
+      "Nokia Corp. Common Stock"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "extreme price volatility",
+      "EVENT",
+      "VolatilitySpike"
+    ],
+    "ID": "7950610330",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "class-action lawsuits",
+      "EVENT",
+      "Litigation"
+    ],
+    "ID": "6478595654",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "prevented buying shares",
+      "EVENT",
+      "TradingRestriction"
+    ],
+    "ID": "6478595654",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "University of Pennsylvania\u2019s Carey Law School",
+      "COMPANY",
+      "University of Pennsylvania Carey Law School"
+    ],
+    "R": "employs",
+    "T": [
+      "Jill Fisch",
+      "PERSON",
+      "Jill Fisch"
+    ],
+    "ID": "6478595654",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Vladimir Tenev",
+      "PERSON",
+      "Vladimir Tenev"
+    ],
+    "R": "hasRole",
+    "T": [
+      "co-founder",
+      "ROLE",
+      "Co-founder"
+    ],
+    "ID": "6478595654",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "eased up some restrictions",
+      "EVENT",
+      "TradingRestriction"
+    ],
+    "ID": "6478595654",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "extreme volatility",
+      "EVENT",
+      "VolatilitySpike"
+    ],
+    "ID": "6478595654",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Financial Industry Regulatory Authority",
+      "COMPANY",
+      "Financial Industry Regulatory Authority"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "regulatory actions",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "6478595654",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Federal Reserve",
+      "COMPANY",
+      "Federal Reserve"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "regulatory actions",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "6478595654",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Securities and Exchange Commission",
+      "COMPANY",
+      "Securities and Exchange Commission"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "regulatory actions",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "6478595654",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Novavax Inc.",
+      "COMPANY",
+      "Novavax Inc."
+    ],
+    "R": "produces",
+    "T": [
+      "vaccine candidate",
+      "PRODUCT",
+      "COVID-19 Vaccine"
+    ],
+    "ID": "2642482856",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Pfizer Inc.",
+      "COMPANY",
+      "Pfizer Inc."
+    ],
+    "R": "produces",
+    "T": [
+      "vaccine candidate",
+      "PRODUCT",
+      "COVID-19 Vaccine"
+    ],
+    "ID": "2642482856",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "BioNTech SE",
+      "COMPANY",
+      "BioNTech SE"
+    ],
+    "R": "produces",
+    "T": [
+      "vaccine candidate",
+      "PRODUCT",
+      "COVID-19 Vaccine"
+    ],
+    "ID": "2642482856",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Moderna Inc.",
+      "COMPANY",
+      "Moderna Inc."
+    ],
+    "R": "produces",
+    "T": [
+      "vaccine candidate",
+      "PRODUCT",
+      "COVID-19 Vaccine"
+    ],
+    "ID": "2642482856",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "United Kingdom",
+      "LOCATION",
+      "United Kingdom"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "COVID-19 pandemic",
+      "EVENT",
+      "Pandemic"
+    ],
+    "ID": "2642482856",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "South Africa",
+      "LOCATION",
+      "South Africa"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "COVID-19 pandemic",
+      "EVENT",
+      "Pandemic"
+    ],
+    "ID": "2642482856",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "European Medicines Agency",
+      "COMPANY",
+      "European Medicines Agency"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "authorized vaccine",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "2642482856",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "AstraZeneca",
+      "COMPANY",
+      "AstraZeneca"
+    ],
+    "R": "produces",
+    "T": [
+      "COVID-19 vaccine",
+      "PRODUCT",
+      "COVID-19 Vaccine"
+    ],
+    "ID": "2642482856",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "European Union",
+      "LOCATION",
+      "European Union"
+    ],
+    "R": "announcesPolicy",
+    "T": [
+      "block exports of shots",
+      "EVENT",
+      "TradeSanctions"
+    ],
+    "ID": "2642482856",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "European Council",
+      "COMPANY",
+      "European Council"
+    ],
+    "R": "employs",
+    "T": [
+      "Charles Michel",
+      "PERSON",
+      "Charles Michel"
+    ],
+    "ID": "2642482856",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Charles Michel",
+      "PERSON",
+      "Charles Michel"
+    ],
+    "R": "hasRole",
+    "T": [
+      "president",
+      "ROLE",
+      "President"
+    ],
+    "ID": "2642482856",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "France",
+      "LOCATION",
+      "France"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "vaccine shortages",
+      "EVENT",
+      "SupplyChainDisruption"
+    ],
+    "ID": "2642482856",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Portugal",
+      "LOCATION",
+      "Portugal"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "vaccine shortages",
+      "EVENT",
+      "SupplyChainDisruption"
+    ],
+    "ID": "2642482856",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Spain",
+      "LOCATION",
+      "Spain"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "vaccine shortages",
+      "EVENT",
+      "SupplyChainDisruption"
+    ],
+    "ID": "2642482856",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Germany",
+      "LOCATION",
+      "Germany"
+    ],
+    "R": "hasRecommendation",
+    "T": [
+      "AstraZeneca vaccine for under-65s",
+      "PRODUCT",
+      "COVID-19 Vaccine"
+    ],
+    "ID": "2642482856",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Novartis",
+      "COMPANY",
+      "Novartis"
+    ],
+    "R": "produces",
+    "T": [
+      "Pfizer/BioNTech vaccine",
+      "PRODUCT",
+      "COVID-19 Vaccine"
+    ],
+    "ID": "2642482856",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Brazil",
+      "LOCATION",
+      "Brazil"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "COVID-19 pandemic",
+      "EVENT",
+      "Pandemic"
+    ],
+    "ID": "2642482856",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "India",
+      "LOCATION",
+      "India"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "COVID-19 pandemic",
+      "EVENT",
+      "Pandemic"
+    ],
+    "ID": "2642482856",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Mexico",
+      "LOCATION",
+      "Mexico"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "COVID-19 pandemic",
+      "EVENT",
+      "Pandemic"
+    ],
+    "ID": "2642482856",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "China",
+      "LOCATION",
+      "China"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "COVID-19 pandemic",
+      "EVENT",
+      "Pandemic"
+    ],
+    "ID": "2642482856",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "GameStop\u2019s stock price",
+      "FINANCIAL_INSTRUMENT",
+      "GameStop Corp. Common Stock"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "meteoric rise",
+      "EVENT",
+      "PriceSurge"
+    ],
+    "ID": "7822155126",
+    "S": "Positive"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood"
+    ],
+    "R": "isCompetitorOf",
+    "T": [
+      "Charles Schwab",
+      "COMPANY",
+      "Charles Schwab"
+    ],
+    "ID": "7822155126",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood"
+    ],
+    "R": "isCompetitorOf",
+    "T": [
+      "E*Trade",
+      "COMPANY",
+      "E*Trade"
+    ],
+    "ID": "7822155126",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "U.S.",
+      "LOCATION",
+      "United States"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "COVID-19 pandemic",
+      "EVENT",
+      "Pandemic"
+    ],
+    "ID": "7822155126",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "MIT Sloan School of Management",
+      "COMPANY",
+      "MIT Sloan School of Management"
+    ],
+    "R": "employs",
+    "T": [
+      "SP Kothari",
+      "PERSON",
+      "SP Kothari"
+    ],
+    "ID": "7822155126",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "SP Kothari",
+      "PERSON",
+      "SP Kothari"
+    ],
+    "R": "hasRole",
+    "T": [
+      "professor",
+      "ROLE",
+      "Professor"
+    ],
+    "ID": "7822155126",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "SP Kothari",
+      "PERSON",
+      "SP Kothari"
+    ],
+    "R": "hasRole",
+    "T": [
+      "former chief economist",
+      "ROLE",
+      "Chief Economist"
+    ],
+    "ID": "7822155126",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Securities and Exchange Commission",
+      "COMPANY",
+      "Securities and Exchange Commission"
+    ],
+    "R": "employs",
+    "T": [
+      "SP Kothari",
+      "PERSON",
+      "SP Kothari"
+    ],
+    "ID": "7822155126",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "MIT Sloan School of Management",
+      "COMPANY",
+      "MIT Sloan School of Management"
+    ],
+    "R": "employs",
+    "T": [
+      "Eric So",
+      "PERSON",
+      "Eric So"
+    ],
+    "ID": "7822155126",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Eric So",
+      "PERSON",
+      "Eric So"
+    ],
+    "R": "hasRole",
+    "T": [
+      "professor",
+      "ROLE",
+      "Professor"
+    ],
+    "ID": "7822155126",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "GameStop",
+      "FINANCIAL_INSTRUMENT",
+      "GameStop Corp. Common Stock"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "GameStop saga",
+      "EVENT",
+      "VolatilitySpike"
+    ],
+    "ID": "7403241221",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Hedgeye",
+      "COMPANY",
+      "Hedgeye"
+    ],
+    "R": "basedIn",
+    "T": [
+      "Greenwich, Conn.",
+      "LOCATION",
+      "Greenwich, Connecticut, United States"
+    ],
+    "ID": "7403241221",
+    "S": "Neutral"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "lawsuits",
+      "EVENT",
+      "Litigation"
+    ],
+    "ID": "7403241221",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood"
+    ],
+    "R": "isAffectedByEvent",
+    "T": [
+      "government oversight woes",
+      "EVENT",
+      "RegulatoryAction"
+    ],
+    "ID": "7403241221",
+    "S": "Negative"
+  },
+  {
+    "H": [
+      "Robinhood",
+      "COMPANY",
+      "Robinhood"
+    ],
+    "R": "announcedEvent",
+    "T": [
+      "cash call",
+      "EVENT",
+      "CorporateFinancing"
+    ],
+    "ID": "7403241221",
+    "S": "Negative"
+  }
+]
