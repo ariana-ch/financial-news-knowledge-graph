@@ -4,31 +4,37 @@
 \usepackage{enumitem}
 \usepackage{booktabs}
 \usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{array}
 
-\title{TICS: A Thematic Industry Classification Standard for Equity Indices}
-\author{(for internal use)}
+\title{TICS: A Thematic Industry Classification \& Financial Knowledge Graph Specification}
+\author{(internal draft)}
 \date{September 2025}
 
 \begin{document}
 \maketitle
 
-\section*{Overview}
-This document defines a \emph{Thematic Industry Classification Standard} (TICS) to serve as a GICS-like sector system for thematic indices. Constituents are assigned to themes primarily via a \textbf{news knowledge graph} (KG) that links issuers to theme nodes through multi-hop, typed relations. The model allows expansion with additional fundamentals/alt-data signals (with coefficients set to zero if unused).
+\section*{Purpose}
+This document specifies (i) a GICS-like thematic taxonomy (``TICS'') with definitions and example constituents, and (ii) a financial knowledge graph (KG) schema---entity types and relationships---suitable for automated triple extraction from news/research. It also formalizes a graph-based assignment method that builds theme indices from the \emph{last $X$ days} (e.g., 30) of temporal KGs using path-distance to theme nodes.
 
-\section{Taxonomy (Level 1 $\rightarrow$ Level 2) with Examples}
-Each supersector includes a short definition and three liquid, illustrative tickers (not investment advice).
+\vspace{0.5em}
+\noindent\textbf{Notation:} Companies indexed by $i\in\mathcal{C}$, themes by $k\in\mathcal{T}$, days by $t$. The rolling window length is $X$ days.
+
+%=========================================================
+\section{Theme Definitions (TICS L1) with Example Stocks}
+Three liquid, illustrative examples per theme (not investment advice).
 
 \begin{enumerate}[leftmargin=*]
 \item \textbf{Compute \& Digital Infrastructure}\\
-\emph{Definition:} Firms that design, build, or operate hardware/software/facilities powering large-scale compute, networking, storage, and edge.\\
+\emph{Definition:} Firms that design, build, or operate the hardware, software, and facilities powering large-scale compute, networking, storage, and edge.\\
 \emph{Examples:} NVIDIA (NVDA), Broadcom (AVGO), Equinix (EQIX).
 
 \item \textbf{Energy \& Power Systems}\\
-\emph{Definition:} Generation, transmission, distribution, and conversion technologies/services supplying reliable electric power on- and off-grid.\\
+\emph{Definition:} Generation, transmission, distribution, and conversion technologies/services supplying reliable electrical power on- and off-grid.\\
 \emph{Examples:} Schneider Electric (SU FP), Eaton (ETN), NextEra Energy (NEE).
 
 \item \textbf{Materials \& Critical Resources}\\
-\emph{Definition:} Metals, minerals, chemicals, and recycling essential to electrification, compute, mobility, and clean energy supply chains.\\
+\emph{Definition:} Producers and processors of metals, minerals, chemicals, and recycling essential to electrification, compute, mobility, and clean energy supply chains.\\
 \emph{Examples:} Freeport-McMoRan (FCX), Cameco (CCJ), Albemarle (ALB).
 
 \item \textbf{Mobility \& Logistics}\\
@@ -36,7 +42,7 @@ Each supersector includes a short definition and three liquid, illustrative tick
 \emph{Examples:} Tesla (TSLA), BYD (1211 HK), DSV (DSV DC).
 
 \item \textbf{Health \& Human Performance}\\
-\emph{Definition:} Biopharma, medtech, diagnostics, and digital health improving longevity, metabolic/chronic-care outcomes, and real-time monitoring.\\
+\emph{Definition:} Biopharma, medtech, diagnostics, and digital health improving longevity, metabolic/chronic-care outcomes, and real-time patient monitoring.\\
 \emph{Examples:} Novo Nordisk (NOVO-B DC), Eli Lilly (LLY), Dexcom (DXCM).
 
 \item \textbf{Security, Defense \& Resilience}\\
@@ -44,23 +50,23 @@ Each supersector includes a short definition and three liquid, illustrative tick
 \emph{Examples:} BAE Systems (BA/ LN), Lockheed Martin (LMT), RTX (RTX).
 
 \item \textbf{Financial Infrastructure \& Digital Assets}\\
-\emph{Definition:} Payments rails, merchant acquiring, market plumbing, custody/compliance, and tokenization platforms enabling real-time, interoperable finance.\\
+\emph{Definition:} Payments rails, market plumbing, custody/compliance, and tokenization platforms enabling real-time, interoperable finance.\\
 \emph{Examples:} Adyen (ADYEN NA), Fiserv (FI), Coinbase (COIN).
 
 \item \textbf{Climate Adaptation, Water \& Environment}\\
-\emph{Definition:} Water treatment/desalination, monitoring, metering, and environmental services mitigating physical climate risks and resource scarcity.\\
+\emph{Definition:} Water treatment/desalination, monitoring/metering, environmental services and adaptation solutions mitigating physical climate risks.\\
 \emph{Examples:} Xylem (XYL), Ecolab (ECL), Veolia (VIE FP).
 
 \item \textbf{Built Environment \& Industrial Systems}\\
-\emph{Definition:} Automation, controls, building systems, and industrial technology improving productivity, safety, and energy efficiency.\\
+\emph{Definition:} Automation, controls, building systems, and industrial technologies that raise productivity, safety, and energy efficiency.\\
 \emph{Examples:} Siemens (SIE GR), Rockwell Automation (ROK), Honeywell (HON).
 
 \item \textbf{Consumer, Media \& Experiences}\\
-\emph{Definition:} Platforms/brands monetizing attention and discretionary spend via streaming, interactive content, creator ecosystems, and premium goods.\\
+\emph{Definition:} Platforms and brands monetizing attention and discretionary spend via streaming, interactive content, creator ecosystems, and premium goods.\\
 \emph{Examples:} Netflix (NFLX), Roblox (RBLX), LVMH (MC FP).
 
 \item \textbf{Space \& Frontier Technologies}\\
-\emph{Definition:} Space launch, LEO communications, Earth-observation, and enabling components/data platforms extending operations beyond Earth.\\
+\emph{Definition:} Launch, LEO communications, Earth observation, and enabling components/data platforms extending operations beyond Earth.\\
 \emph{Examples:} Rocket Lab (RKLB), Iridium (IRDM), SES (SESG LX).
 
 \item \textbf{Government, Education \& Public Tech}\\
@@ -68,151 +74,233 @@ Each supersector includes a short definition and three liquid, illustrative tick
 \emph{Examples:} Palantir (PLTR), Tyler Technologies (TYL), Pearson (PSON LN).
 \end{enumerate}
 
-\section{Graph-Centric Assignment Model}
-Let $i$ index issuers, $k$ index themes, $t$ index time. Build a heterogeneous KG with node sets
-$\mathcal{V} = \mathcal{C}\cup\mathcal{T}\cup\mathcal{N}$ (companies, themes, news articles) and typed edges
-$\mathcal{E} = \{(u \xrightarrow{r} v)\}$ with relation $r\in\mathcal{R}$ (e.g., \textsf{mentions}, \textsf{supplies}, \textsf{partners}, \textsf{acquires}, \textsf{funds}, \textsf{geo}, \textsf{topic}).
-Edge weights $w_{uvr,t}$ reflect frequency, source quality, and \emph{recency} via exponential decay $\exp(-\lambda \Delta t)$.
+%=========================================================
+\section{Financial Knowledge Graph Specification}
 
-\subsection*{Graph Exposure Score}
-Define a set of metapaths $\mathcal{P}$ that connect companies to themes (examples: $C\!\to\!N\!\to\!T$, $C\!\to\!C\!\to\!N\!\to\!T$, $C\!\to\!C$ (supply) $\!\to\!N\!\to\!T$).
-Let $A_r$ be the row-stochastic adjacency for relation type $r$ at time $t$.
-For metapath $p=(r_1,\dots,r_L)$, define the path operator $M_p=\prod_{\ell=1}^L A_{r_\ell}$ (matrix product in order).
-The \emph{graph-based} theme linkage for issuer $i$ and theme $k$ is
-\begin{equation}
-g_{i,t,k} \;=\; \sum_{p\in\mathcal{P}} \alpha_p \big[ \mathbf{e}_i^\top M_p \mathbf{u}_k \big],
-\qquad \alpha_p\ge 0,\; \sum_p \alpha_p = 1,
-\label{eq:graphscore}
-\end{equation}
-where $\mathbf{e}_i$ selects issuer $i$ and $\mathbf{u}_k$ selects theme node $k$ (or a cluster of synonyms).\footnote{Alternatively, use personalized PageRank from $i$ to the theme subgraph:
-$g_{i,t,k}=\mathbf{e}_i^\top \big( (1-\beta)\sum_{h=0}^\infty \beta^h A^h \big)\mathbf{u}_k$ with restart vector on theme nodes.}
+\subsection{Entity Types}
+Entity types are designed for extensibility. Where appropriate, we define initial enums. ``Examples'' are indicative values for extraction prompts.
 
-\subsection*{Auxiliary Signals (optional)}
-Let the following be z-scored within region/cap buckets and exponentially smoothed (half-life $\approx 12$ months):
-\begin{align*}
-&\hat{R}_{i,t,k} \text{ (revenue share from theme $k$)},\quad
-\hat{G}_{i,t,k} \text{ (growth of theme-linked revenue)},\quad
-\hat{C}_{i,t,k} \text{ (CapEx share)},\\
-&\hat{RD}_{i,t,k} \text{ (R\&D share)},\quad
-\hat{P}_{i,t,k} \text{ (patent intensity; CPC-aligned)},\quad
-\hat{H}_{i,t,k} \text{ (hiring intensity in theme roles)},\\
-&\hat{T}_{i,t,k} \text{ (text similarity: filings/transcripts/news)},\quad
-\hat{S}_{i,t,k} \text{ (supply-chain dependence on theme $k$)}.
-\end{align*}
+\begin{longtable}{>{\bfseries}p{3.5cm} p{7.8cm} p{4.2cm}}
+\toprule
+Type & Description & Examples / Initial Enum \\
+\midrule
+Theme (TICS L1) &
+Top-level thematic categories used for index construction. &
+\emph{Enum (initial):} \{Compute \& Digital Infrastructure; Energy \& Power Systems; Materials \& Critical Resources; Mobility \& Logistics; Health \& Human Performance; Security, Defense \& Resilience; Financial Infrastructure \& Digital Assets; Climate Adaptation, Water \& Environment; Built Environment \& Industrial Systems; Consumer, Media \& Experiences; Space \& Frontier Technologies; Government, Education \& Public Tech\}. \\
+\addlinespace
+Theme (TICS L2) &
+Optional sub-themes under each L1 (non-exhaustive, expandable). &
+e.g., under Compute: \{AI Compute \& Accelerators, Cloud/Hyperscale, Optical/Interconnects, Cooling/Thermal, Edge/5G, Cybersecurity, Data/MLOps\}. \\
+\addlinespace
+Company / Issuer &
+Public or private operating entities; parents/subsidiaries. &
+NVIDIA; Broadcom; Equinix; Siemens; BYD; BAE Systems. \\
+\addlinespace
+Security / Listing &
+Tradable instruments and metadata (ticker, ISIN, MIC). &
+NVDA (NASDAQ); EQIX (NASDAQ); SIE GR (XETR). \\
+\addlinespace
+Person &
+Executives, founders, analysts, policymakers. &
+CEO; CFO; analyst names; ministers. \\
+\addlinespace
+Organization (non-issuer) &
+Regulators, exchanges, SROs, standards bodies, universities. &
+SEC; FCA; FDA; ECB; ISO; ITU; MIC authority. \\
+\addlinespace
+Product / Service &
+Commercial offerings tied to companies/themes. &
+H100; B200; LEO satellite service; desalination plant EPC. \\
+\addlinespace
+Technology &
+Tech concepts or components referenced in news/research. &
+GPU; HBM; HVDC; SMR; LiDAR; GLP-1; tokenized RWA. \\
+\addlinespace
+Event &
+Time-stamped corporate or macro events. \emph{Enum (initial):} \{Earnings, Guidance, Product Launch, Partnership, Contract Award, Customer Win, M\&A Announce, M\&A Close, Capital Raise, Share Buyback, Regulatory Approval, Regulatory Fine, Litigation, Supply Disruption, Facility Outage, Cyber Incident, Layoffs/Hiring, Downgrade/Upgrade, Index Inclusion/Deletion\}. &
+Earnings Q2 2025; SMR permit approval; $500\,$MW HVDC contract award. \\
+\addlinespace
+Document &
+News, research, filings, transcripts; carries text and metadata. &
+WSJ article; sell-side note; 10-K; earnings call transcript. \\
+\addlinespace
+Geography &
+Countries/regions/cities/sites. \emph{Enum basis:} ISO 3166 for countries; UN M49 for regions (externally maintained). &
+United States; EU; Hokkaidō; Ashburn, VA; North Sea. \\
+\addlinespace
+Facility / Site &
+Physical plants, data centers, mines, factories, launch pads. &
+DC11 Ashburn; Pilbara mine; LC-2 launch complex. \\
+\addlinespace
+Contract &
+Commercial agreements (customer, offtake, PPA, JV). &
+10-year PPA; copper offtake; cloud hosting agreement. \\
+\addlinespace
+Metric / KPI &
+Quantities with units and temporal stamps. \emph{Enum (initial types):} \{Revenue, Segment Revenue, Backlog, Bookings, CapEx, R\&D, Shipments, Utilization, Power Capacity (MW), PUE, Hashrate, Installed Base, Patients Enrolled\}. Units persisted separately. &
+``CapEx = \$3.1bn (FY2025)''; ``BESS = 1.2\,GWh''. \\
+\addlinespace
+Asset (Financial) &
+Currencies, indices, commodities (reference assets). \emph{Enum basis:} ISO 4217 for currencies; major indices/commodities by code. &
+USD; EUR; Brent; Copper LME; S\&P 500. \\
+\addlinespace
+Standard / Certification &
+Compliance/standards or ratings referenced. &
+ISO 27001; SOC 2; DoD IL5; FDA Breakthrough. \\
+\bottomrule
+\end{longtable}
 
-\subsection*{Composite Purity Score and Assignment}
-Combine graph and auxiliary signals via a calibrated link function $\sigma(\cdot)$ (e.g., logistic or isotonic mapping to $[0,1]$):
-\begin{equation}
-\boxed{
-S_{i,t,k}
-=
-\sigma\!\left(
-\theta_g\, g_{i,t,k}
-+ \theta_R \hat{R}_{i,t,k}
-+ \theta_G \hat{G}_{i,t,k}
-+ \theta_C \hat{C}_{i,t,k}
-+ \theta_{RD} \hat{RD}_{i,t,k}
-+ \theta_P \hat{P}_{i,t,k}
-+ \theta_H \hat{H}_{i,t,k}
-+ \theta_T \hat{T}_{i,t,k}
-+ \theta_S \hat{S}_{i,t,k}
-\right)
-}
-\label{eq:composite}
-\end{equation}
-Coefficients $\Theta=\{\theta_\bullet\}$ are nonnegative and may be set to zero to exclude a channel.
-Calibration targets: human-labeled firm--theme pairs, audited revenue purity, and stability constraints.
+\subsection{Relationship Types (Edges)}
+Edges are typed, directed, and time-stamped. Below we list canonical triples \texttt{(head --relation--> tail)} with intended domains.
 
-\paragraph{Primary Theme (mutually exclusive).}
-Let $S_{i,t,(1)}$ and $S_{i,t,(2)}$ be the top two theme scores for issuer $i$ at time $t$. Assign
-\[
-k^\star(i,t)=\arg\max_k S_{i,t,k}
-\quad\text{if}\quad
-S_{i,t,(1)} \ge \tau_1
-\;\text{ and }\;
-S_{i,t,(1)} - S_{i,t,(2)} \ge \Delta,
-\]
-else assign the issuer to the \emph{L1 supersector} of the top theme and flag as ``diversified''. Typical values: $\tau_1\in[0.5,0.7]$, $\Delta\in[0.05,0.15]$.
+\begin{longtable}{>{\bfseries}p{3.8cm} p{9.6cm} p{2.1cm}}
+\toprule
+Relation & Semantics \& Canonical Triple Examples & Domain$\to$Range \\
+\midrule
+\texttt{mentions} & Document mentions Entity (company/theme/technology/person). & Document$\to$Entity \\
+\texttt{about} & Document is primarily about Entity/Theme (stronger than \texttt{mentions}). & Document$\to$(Company/Theme/Event) \\
+\texttt{reports\_metric} & Document reports (Metric, value, unit, time). & Document$\to$Metric \\
+\texttt{has\_event} & Document describes Event. & Document$\to$Event \\
+\texttt{located\_in} & Entity located in Geography or Facility in Geography. & (Company/Facility)$\to$Geography \\
+\texttt{operates} & Company operates Facility/Site. & Company$\to$Facility \\
+\texttt{produces} & Company produces Product/Service/Technology. & Company$\to$(Product/Technology) \\
+\texttt{uses\_technology} & Company uses Technology. & Company$\to$Technology \\
+\texttt{supplies\_to} & Company supplies Product/Component to Company. & Company$\to$Company \\
+\texttt{customer\_of} & Company is a customer of Company. & Company$\to$Company \\
+\texttt{partner\_with} & Strategic/tech partnership. & Company$\leftrightarrow$Company \\
+\texttt{competes\_with} & Competitive relationship (symmetric). & Company$\leftrightarrow$Company \\
+\texttt{subsidiary\_of} & Corporate hierarchy. & Company$\to$Company \\
+\texttt{acquires} & M\&A (Event node can carry terms; close date). & Company$\to$Company \\
+\texttt{invests\_in} & Equity/convertible/capex/JV investment. & Company/Org$\to$(Company/Project) \\
+\texttt{awarded\_contract} & Company awarded Contract by Customer. & Company$\to$Contract \\
+\texttt{contract\_with} & Contract binds Company and Company. & Contract$\to$Company \\
+\texttt{contract\_scope} & Contract covers Product/Service/Technology. & Contract$\to$(Product/Technology) \\
+\texttt{aligns\_to\_theme} & Company aligns to Theme (derived or asserted). & Company$\to$Theme \\
+\texttt{enables\_theme} & Technology/Product enables Theme. & (Technology/Product)$\to$Theme \\
+\texttt{revenue\_from\_theme} & Metric node for theme revenue share. & Company$\to$Theme \\
+\texttt{event\_affects} & Event impacts Entity (company/theme/facility). & Event$\to$Entity \\
+\texttt{regulates} & Regulator regulates Company/Activity. & Organization$\to$(Company/Theme) \\
+\texttt{approves/denies} & Regulatory decision on Product/Event. & Organization$\to$(Product/Event) \\
+\texttt{fines/sues} & Legal action against Company/Person. & Organization/Company$\to$(Company/Person) \\
+\texttt{publishes} & Organization publishes Document. & Organization$\to$Document \\
+\texttt{speaks\_at} & Person speaks at Event (conference/earnings). & Person$\to$Event \\
+\texttt{appointed} & Person appointed Role at Company. & Company$\to$Person \\
+\texttt{guides} & Company issues Guidance Metric. & Company$\to$Metric \\
+\texttt{indexed\_in} & Security belongs to Index. & Security$\to$Asset \\
+\bottomrule
+\end{longtable}
 
-\paragraph{Secondary Tags (overlapping).}
-Optionally tag up to two additional themes with $S_{i,t,k} \ge \tau_2$ (e.g., $\tau_2\approx 0.45$).
-
-\paragraph{Turnover Control.}
-Apply a two-quarter hysteresis before changing a primary assignment; impose buffers on $\tau_1,\Delta$ at rebalances.
-
-\section{Theme Lexicons (News KG Nodes)}
-The lists below are seed lexicons intended to instantiate theme nodes in the news KG. Use lemmatization, case-insensitive matching, phrase detection (bi/tri-grams), and an alias system. Extend with industry-specific jargon and product codenames during curation.
-
-\subsection*{1.\ Compute \& Digital Infrastructure}
-\textbf{Lexicon:}
-AI accelerator; GPU; TPU; inference chip; \emph{H100}; \emph{B200}; PCIe switch; Ethernet switch; InfiniBand; optical transceiver; co-packaged optics; CXL; DDR/HBM; memory controller; NVLink; data center; hyperscale; colocation; edge computing; micro data center; bare-metal cloud; cloud region; availability zone; liquid cooling; immersion cooling; rear-door heat exchanger; PUE; kilowatt per rack; power purchase agreement (PPA); server ODM; white-box server; Kubernetes; container orchestration; MLOps; vector database; retrieval-augmented generation; observability; AIOps; zero trust; SOC as a service.
-
-\subsection*{2.\ Energy \& Power Systems}
-\textbf{Lexicon:}
-HVDC; grid interconnection; transformer; switchgear; substation; relay protection; STATCOM; synchronous condenser; microgrid; demand response; virtual power plant (VPP); capacity market; ancillary services; peaker plant; utility-scale solar; onshore wind; offshore wind; battery energy storage (BESS); inverter; power electronics; electrolyzer; hydrogen hub; fuel cell; heat pump; combined cycle gas turbine (CCGT); transmission line; right-of-way permit; intertie; N-1 contingency; outage management system (OMS); distributed energy resources (DER); behind-the-meter; load shedding.
-
-\subsection*{3.\ Materials \& Critical Resources}
-\textbf{Lexicon:}
-copper concentrate; cathode; smelter; refinery; grade; ore body; resource estimate; lithium brine; spodumene; carbonate equivalent (LCE); nickel sulfate; cobalt hydroxide; manganese; rare earths; neodymium-praseodymium (NdPr); dysprosium; scandium; graphite anode; silicon anode; uranium yellowcake; enrichment; conversion; SWU; offtake agreement; recycling; black mass; hydrometallurgy; solvent extraction; tailings; royalty/streaming; capex intensity; cash cost (C1); ESG permit.
-
-\subsection*{4.\ Mobility \& Logistics}
-\textbf{Lexicon:}
-battery electric vehicle (BEV); plug-in hybrid (PHEV); charging station; DC fast charge; megawatt charging system (MCS); solid-state battery; LFP; NMC; e-axle; silicon carbide inverter; autonomous driving; ADAS; LiDAR; radar; HD map; over-the-air update; fleet telematics; warehouse automation; AMR; AGV; last-mile delivery; cross-dock; intermodal; cold chain; freight brokerage; ocean freight; air cargo; capacity utilization; dwell time.
-
-\subsection*{5.\ Health \& Human Performance}
-\textbf{Lexicon:}
-GLP-1; semaglutide; tirzepatide; obesity therapy; metabolic syndrome; HbA1c; cardiovascular outcomes trial (CVOT); gene editing; CRISPR; base editing; prime editing; AAV vector; CAR-T; bispecific antibody; RNAi; antisense oligonucleotide; biomarker; companion diagnostic; wearables; continuous glucose monitoring (CGM); remote patient monitoring; telehealth; electronic health record (EHR); clinical trial phase 2; CDMO; CMO; IND filing; FDA priority review; EMA CHMP; reimbursement; health economics (HEOR).
-
-\subsection*{6.\ Security, Defense \& Resilience}
-\textbf{Lexicon:}
-air defense; interceptor; loitering munition; guided rocket; radar cross-section; AESA radar; EW/ECM; command and control (C2); ISR; satellite imagery; hardened comms; secure datalink; cybersecurity; XDR; EDR; SASE; zero trust; identity access management; privileged access; OT security; critical infrastructure protection; red team; threat intel; SOC; munitions stockpile; replenishment contract; offset agreement; NATO spending; survivability; resilience; disaster recovery; business continuity.
-
-\subsection*{7.\ Financial Infrastructure \& Digital Assets}
-\textbf{Lexicon:}
-real-time payments; RTP; FedNow; instant settlement; ISO 20022; ACH modernization; card acquiring; payment gateway; tokenization (cards); network token; chargeback; interchange; BNPL; point-of-sale (POS); AML; KYC; sanctions screening; custody; qualified custodian; digital wallet; stablecoin; on-chain settlement; tokenized Treasuries; RWA; smart contract; permissioned blockchain; central securities depository (CSD); CCP; clearing; market data feed; matching engine; FIX gateway.
-
-\subsection*{8.\ Climate Adaptation, Water \& Environment}
-\textbf{Lexicon:}
-desalination; reverse osmosis; ultrafiltration; membrane bioreactor; water reuse; wastewater treatment; PFAS remediation; activated carbon; leak detection; non-revenue water; smart meter (AMI); flood defense; sea wall; wildfire mitigation; drought index; heat stress; climate resilience; catastrophe modeling; air quality monitoring; ESG assurance; MRV (measurement, reporting, verification); carbon accounting; nature-based solutions; reforestation credits; circular economy; waste-to-energy; landfill gas capture.
-
-\subsection*{9.\ Built Environment \& Industrial Systems}
-\textbf{Lexicon:}
-building management system (BMS); HVAC; chiller; heat exchanger; variable frequency drive (VFD); smart thermostat; occupancy sensor; digital twin; predictive maintenance; PLC; SCADA; machine vision; cobot; industrial robot; motion control; MES; OPC UA; additive manufacturing; 3D printing; industrial IoT; condition monitoring; safety relay; lockout/tagout; factory automation; OEE; brownfield retrofit; energy efficiency retrofit; demand-controlled ventilation.
-
-\subsection*{10.\ Consumer, Media \& Experiences}
-\textbf{Lexicon:}
-SVOD; AVOD; FAST channel; content licensing; theatrical window; AAA game; live-ops; in-app purchase; creator economy; influencer marketing; short-form video; social commerce; recommendation algorithm; user acquisition (UA); churn; MAU/DAU; engagement; AR/VR; mixed reality; experiential retail; luxury goods; premium pricing; brand equity; loyalty program; cross-border e-commerce; last-mile return; digital wallet checkout.
-
-\subsection*{11.\ Space \& Frontier Technologies}
-\textbf{Lexicon:}
-launch manifest; small-lift; rideshare; \emph{reusability}; fairing recovery; satellite bus; LEO constellation; MEO; GEO; Ka-band; optical inter-satellite link; ground station; TT\&C; Earth observation; SAR imaging; geospatial analytics; satellite IoT; spectrum allocation; ITU filing; debris mitigation; space tug; on-orbit servicing; space situational awareness (SSA); lunar payload; deep space network.
-
-\subsection*{12.\ Government, Education \& Public Tech}
-\textbf{Lexicon:}
-GovTech; e-government; identity verification; digital ID; eKYC; case management; benefits administration; tax filing portal; health exchange; electronic records; freedom of information portal; procurement platform; grants management; justice/courts software; 311 service; permit processing; open data; census platform; edtech LMS; student information system (SIS); digital assessment; proctoring; public safety CAD; RMS; body-worn camera; evidence management.
-
-\section{Index Construction (per Theme)}
-\textbf{Universe:} Developed+EM equities; float-adjusted mkt cap $>\$500$mm; median \$-ADV $> \$2$mm (90d).\\
-\textbf{Selection:} Choose 30--60 names prioritizing purity: always include top-decile $S_{i,t,k}$; then add by $S$ while respecting liquidity.\\
-\textbf{Weights:} Purity-tilted cap weighting
-\begin{equation}
-w_i \propto \mathrm{Cap}_i^{\alpha} \cdot \big(S_{i,t,k}\big)^{\beta},
-\qquad \alpha\in[0,1],\; \beta\ge 0,
-\end{equation}
-with caps: single name $\le 8\%$ (or $5\%$ UCITS), country $\le 25\%$.\\
-\textbf{Rebalance:} Quarterly; fast-entry for IPOs/spin-offs with top-decile $S$ and liquidity.\\
-\textbf{Corporate Actions:} Standard free-float adjustments; preserve theme continuity across mergers/ticker changes.
-
-\section{Implementation Notes}
+\paragraph{Extraction Guidance (for LLM prompts).}
 \begin{itemize}[leftmargin=*]
-\item \textbf{News KG construction:} Ingest structured news with entity and theme tagging; store edges with timestamps and source scores. Use decay $\exp(-\lambda\Delta t)$ and normalize per-source to avoid publisher bias.
-\item \textbf{Metapath set $\mathcal{P}$:} Start with $\{C\!\to\!N\!\to\!T,\, C\!\to\!C_{\text{supplies}}\!\to\!N\!\to\!T,\, C\!\to\!N\!\to\!N\!\to\!T\}$; tune $\alpha_p$ by maximizing out-of-sample purity.
-\item \textbf{Text features $\hat{T}$:} Sentence-embedding similarity between issuer disclosures/transcripts and curated theme dictionaries; optional supervised fine-tune.
-\item \textbf{Calibration $\sigma$:} Fit isotonic regression mapping raw sums to empirical purity probability on a labeled validation set.
-\item \textbf{Stability:} Exponential smoothing of features; assignment hysteresis; quarterly review of $\Theta$ with guardrails (L2 penalty toward prior $\Theta$).
+\item Emit normalized triples with \texttt{(head, relation, tail, time, source, confidence)}.
+\item Head/tail must be typed to the schema above; if ambiguous, attach \texttt{alias} and \texttt{context} fields.
+\item Prefer \texttt{about} over \texttt{mentions} when the document's main subject is clear.
+\item When extracting \texttt{Metric}, include \texttt{value}, \texttt{unit}, \texttt{period} (ISO date), and \texttt{provenance} (quote span).
+\item Map Themes using the fixed L1 enum; L2 is free-form but mapped to parent L1.
 \end{itemize}
 
-\section{Deliverables}
-Taxonomy YAML, KG schema, scoring pipeline (Eq.~\ref{eq:graphscore}--\ref{eq:composite}), assignment report, purity/backtest metrics, and factsheets for the 12 supersectors and selected Level-2 indices.
+%=========================================================
+\section{Temporal KG \& Path-Distance Assignment}
+
+\subsection{Rolling Temporal Graph}
+For day $t$, construct a time-sliced, heterogeneous KG $G_t=(V_t,E_t)$ from documents in the window $[t-X+1,\,t]$. Each edge $e=(u\xrightarrow{r}v)$ carries a weight
+\[
+w_{e} \;=\; q_{\text{src}} \cdot s_{\text{extract}} \cdot \exp(-\lambda\,\Delta t_e),
+\]
+where $q_{\text{src}}\in[0,1]$ encodes source quality, $s_{\text{extract}}\in[0,1]$ extraction confidence, and $\Delta t_e$ is age in days.
+
+\subsection{Typed Shortest-Path Distance}
+Let $\mathcal{V}_\mathcal{C}$ be company nodes and $\mathcal{V}_\mathcal{T}$ the L1 theme nodes. Define a cost for traversing edge $e$:
+\[
+c(e) \;=\; -\log\!\big(\min(w_{e},\,1-\varepsilon)\big) + \gamma \,\Omega(r_e),
+\]
+where $\Omega(r)$ is a nonnegative penalty by relation type (e.g., lower for \texttt{about}, \texttt{supplies\_to}; higher for generic \texttt{mentions}), and $\gamma\ge 0$. For a company $i$ and theme $k$, define the (typed) shortest-path distance
+\[
+d_t(i,k) \;=\; \min_{\pi\in \Pi(i\to k)} \sum_{e\in \pi} c(e),
+\]
+with $\Pi(i\to k)$ the set of admissible meta-paths (e.g., $C\!\to\!N\!\to\!T$, $C\!\to\!C\!\to\!N\!\to\!T$, $C\!\to\!T$ if asserted).
+
+\subsection{Theme Universe by Distance Threshold}
+For theme $k$, define the investable \emph{universe candidate set} at $t$:
+\[
+\mathcal{U}_k(t;\tau_d, L_{\max}) \;=\; \left\{\, i\in\mathcal{V}_\mathcal{C}\;:\; d_t(i,k)\le \tau_d \ \ \land\ \ \exists \pi\in\Pi(i\to k)\text{ with }|\pi|\le L_{\max}\, \right\}.
+\]
+Typical values: $X=30$ days, $L_{\max}\in\{2,3,4\}$, $\tau_d$ tuned to target hit-rate/purity.
+
+\subsection{Link Strength (for ranking/weights)}
+Convert distances to strengths with a calibrated link:
+\[
+\ell_t(i,k) \;=\; \sigma\!\big(a - b\, d_t(i,k)\big),
+\]
+where $\sigma$ is logistic or isotonic, $a,b>0$ fitted on labeled data (``is company $i$ truly tied to theme $k$?''). Optionally blend in auxiliary channels (set coefficients to zero if unused):
+\[
+\tilde{\ell}_t(i,k) \;=\; \sigma\!\left(\theta_d\,\ell_t(i,k) + \theta_R \hat{R}_{i,k} + \theta_T \hat{T}_{i,k} + \theta_S \hat{S}_{i,k} + \cdots \right),\quad \theta_\bullet \ge 0.
+\]
+
+\paragraph{Primary Assignment.} For mutual exclusivity when needed:
+\[
+k^\star(i,t)=\arg\max_k \tilde{\ell}_t(i,k)\quad \text{if}\ \tilde{\ell}_t(i,(1))\ge \tau_1\ \land\ \tilde{\ell}_t(i,(1))-\tilde{\ell}_t(i,(2))\ge \Delta,
+\]
+else assign to the L1 of the top theme with ``diversified'' flag. Apply 2-quarter hysteresis to reduce churn.
+
+%=========================================================
+\section{Index Construction from the KG}
+
+\subsection{Universe}
+For each theme $k$ at time $t$:
+\[
+\text{Base Universe} \;=\; \mathcal{U}_k(t;\tau_d, L_{\max}) \cap \{ \text{float-adj mkt cap}>\$500\text{m},\ \text{ADV}_{90d}>\$2\text{m} \}.
+\]
+
+\subsection{Selection}
+Target 30--60 names:
+\begin{enumerate}[leftmargin=*]
+\item Include all names in top decile of $\tilde{\ell}_t(i,k)$ within the base universe.
+\item Add by descending $\tilde{\ell}_t(i,k)$ until target count is reached, subject to liquidity/country caps and buffer rules.
+\end{enumerate}
+
+\subsection{Weights}
+Purity-tilted cap weighting:
+\[
+w_i \propto \mathrm{Cap}_i^{\alpha} \cdot \tilde{\ell}_t(i,k)^{\beta},\qquad \alpha\in[0,1],\ \beta\ge 0,
+\]
+with constraints: single name $\le 8\%$ (or 5\% UCITS), country $\le 25\%$, related-party $=0$. Rebalance quarterly; fast-entry for eligible IPOs/spin-offs.
+
+%=========================================================
+\section{Implementation Notes}
+\begin{itemize}[leftmargin=*]
+\item \textbf{Source weighting $q_{\text{src}}$:} tier reputable outlets/filings higher than secondary aggregation; cap per-source contribution to avoid bias.
+\item \textbf{Relation penalties $\Omega(r)$:} e.g., $\Omega(\texttt{about})=0$, $\Omega(\texttt{supplies\_to})=0.1$, $\Omega(\texttt{partner\_with})=0.2$, $\Omega(\texttt{mentions})=0.6$.
+\item \textbf{Admissible meta-paths $\Pi$ (examples):} $C\!\to\!T$ (asserted align), $C\!\to\!N\!\to\!T$, $C\!\to\!C\_{\text{supplies}}\!\to\!N\!\to\!T$, $C\!\to\!P\!\to\!T$ where $P$ is Product/Technology.
+\item \textbf{Schema governance:} L1 theme set is controlled (enum). L2/L3 expandable with parent pointers. Maintain alias/ID maps for companies (PERMIDs/LEIs) and securities (ISIN, MIC, ticker).
+\item \textbf{Extraction QA:} require multi-source corroboration or a minimum path multiplicity before inclusion; log provenance spans for audit.
+\end{itemize}
+
+%=========================================================
+\section{Appendix: Minimal Prompt Skeleton for Triple Extraction}
+\begin{verbatim}
+You are extracting financial knowledge graph triples.
+
+SCHEMA:
+- Entity types: [Theme_L1 (enum: ...), Theme_L2, Company, Security, Person,
+  Organization, Product, Technology, Event (enum: ...), Document, Geography,
+  Facility, Contract, Metric, Asset, Standard]
+- Relations: [mentions, about, reports_metric(value,unit,period),
+  has_event(type), located_in, operates, produces, uses_technology,
+  supplies_to, customer_of, partner_with, competes_with, subsidiary_of,
+  acquires, invests_in, awarded_contract, contract_with, contract_scope,
+  aligns_to_theme, enables_theme, revenue_from_theme, event_affects,
+  regulates, approves/denies, fines/sues, publishes, speaks_at, appointed,
+  guides, indexed_in]
+
+TASK:
+- From the text, emit JSON list of triples:
+  {head: {name, type}, relation, tail: {name, type}, time, source_url,
+   confidence, extras:{...}}.
+- Use Theme_L1 names exactly as enumerated.
+- Prefer 'about' over 'mentions' when applicable.
+- Include Metric values with unit and period if reported.
+- Include evidence_span (quote) where possible.
+\end{verbatim}
 
 \end{document}
