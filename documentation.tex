@@ -1,6 +1,7 @@
 \documentclass[11pt]{article}
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
 \usepackage{booktabs}
 \usepackage{hyperref}
 
@@ -14,10 +15,10 @@
 \section*{Overview}
 This document defines a \emph{Thematic Industry Classification Standard} (TICS) to serve as a GICS-like sector system for thematic indices. Constituents are assigned to themes primarily via a \textbf{news knowledge graph} (KG) that links issuers to theme nodes through multi-hop, typed relations. The model allows expansion with additional fundamentals/alt-data signals (with coefficients set to zero if unused).
 
-\section{Taxonomy (Level 1 \texorpdfstring{$\rightarrow$}{->} Level 2) with Examples}
+\section{Taxonomy (Level 1 $\rightarrow$ Level 2) with Examples}
 Each supersector includes a short definition and three liquid, illustrative tickers (not investment advice).
 
-\begin{enumerate}
+\begin{enumerate}[leftmargin=*]
 \item \textbf{Compute \& Digital Infrastructure}\\
 \emph{Definition:} Firms that design, build, or operate hardware/software/facilities powering large-scale compute, networking, storage, and edge.\\
 \emph{Examples:} NVIDIA (NVDA), Broadcom (AVGO), Equinix (EQIX).
@@ -83,21 +84,20 @@ g_{i,t,k} \;=\; \sum_{p\in\mathcal{P}} \alpha_p \big[ \mathbf{e}_i^\top M_p \mat
 \qquad \alpha_p\ge 0,\; \sum_p \alpha_p = 1,
 \label{eq:graphscore}
 \end{equation}
-where $\mathbf{e}_i$ selects issuer $i$ and $\mathbf{u}_k$ selects theme node $k$ (or a cluster of synonyms).%
-\footnote{Alternatively, use personalized PageRank from $i$ to the theme subgraph:
+where $\mathbf{e}_i$ selects issuer $i$ and $\mathbf{u}_k$ selects theme node $k$ (or a cluster of synonyms).\footnote{Alternatively, use personalized PageRank from $i$ to the theme subgraph:
 $g_{i,t,k}=\mathbf{e}_i^\top \big( (1-\beta)\sum_{h=0}^\infty \beta^h A^h \big)\mathbf{u}_k$ with restart vector on theme nodes.}
 
 \subsection*{Auxiliary Signals (optional)}
 Let the following be z-scored within region/cap buckets and exponentially smoothed (half-life $\approx 12$ months):
 \begin{align*}
 &\hat{R}_{i,t,k} \text{ (revenue share from theme $k$)},\quad
-\hat{G}_{i,t,k} \text{ (growth of theme-linked revenue)},\\
-&\hat{C}_{i,t,k} \text{ (CapEx share)},\quad
-\hat{RD}_{i,t,k} \text{ (R\&D share)},\quad
-\hat{P}_{i,t,k} \text{ (patent intensity; CPC-aligned)},\\
-&\hat{H}_{i,t,k} \text{ (hiring intensity in theme roles)},\quad
-\hat{T}_{i,t,k} \text{ (text similarity: filings/transcripts/news)},\\
-&\hat{S}_{i,t,k} \text{ (supply-chain dependence on theme $k$)}.
+\hat{G}_{i,t,k} \text{ (growth of theme-linked revenue)},\quad
+\hat{C}_{i,t,k} \text{ (CapEx share)},\\
+&\hat{RD}_{i,t,k} \text{ (R\&D share)},\quad
+\hat{P}_{i,t,k} \text{ (patent intensity; CPC-aligned)},\quad
+\hat{H}_{i,t,k} \text{ (hiring intensity in theme roles)},\\
+&\hat{T}_{i,t,k} \text{ (text similarity: filings/transcripts/news)},\quad
+\hat{S}_{i,t,k} \text{ (supply-chain dependence on theme $k$)}.
 \end{align*}
 
 \subsection*{Composite Purity Score and Assignment}
@@ -120,7 +120,7 @@ S_{i,t,k}
 }
 \label{eq:composite}
 \end{equation}
-Coefficients $\Theta=\{\theta_\bullet\}$ are nonnegative and may be set to zero to exclude a channel.%
+Coefficients $\Theta=\{\theta_\bullet\}$ are nonnegative and may be set to zero to exclude a channel.
 Calibration targets: human-labeled firm--theme pairs, audited revenue purity, and stability constraints.
 
 \paragraph{Primary Theme (mutually exclusive).}
@@ -140,6 +140,57 @@ Optionally tag up to two additional themes with $S_{i,t,k} \ge \tau_2$ (e.g., $\
 \paragraph{Turnover Control.}
 Apply a two-quarter hysteresis before changing a primary assignment; impose buffers on $\tau_1,\Delta$ at rebalances.
 
+\section{Theme Lexicons (News KG Nodes)}
+The lists below are seed lexicons intended to instantiate theme nodes in the news KG. Use lemmatization, case-insensitive matching, phrase detection (bi/tri-grams), and an alias system. Extend with industry-specific jargon and product codenames during curation.
+
+\subsection*{1.\ Compute \& Digital Infrastructure}
+\textbf{Lexicon:}
+AI accelerator; GPU; TPU; inference chip; \emph{H100}; \emph{B200}; PCIe switch; Ethernet switch; InfiniBand; optical transceiver; co-packaged optics; CXL; DDR/HBM; memory controller; NVLink; data center; hyperscale; colocation; edge computing; micro data center; bare-metal cloud; cloud region; availability zone; liquid cooling; immersion cooling; rear-door heat exchanger; PUE; kilowatt per rack; power purchase agreement (PPA); server ODM; white-box server; Kubernetes; container orchestration; MLOps; vector database; retrieval-augmented generation; observability; AIOps; zero trust; SOC as a service.
+
+\subsection*{2.\ Energy \& Power Systems}
+\textbf{Lexicon:}
+HVDC; grid interconnection; transformer; switchgear; substation; relay protection; STATCOM; synchronous condenser; microgrid; demand response; virtual power plant (VPP); capacity market; ancillary services; peaker plant; utility-scale solar; onshore wind; offshore wind; battery energy storage (BESS); inverter; power electronics; electrolyzer; hydrogen hub; fuel cell; heat pump; combined cycle gas turbine (CCGT); transmission line; right-of-way permit; intertie; N-1 contingency; outage management system (OMS); distributed energy resources (DER); behind-the-meter; load shedding.
+
+\subsection*{3.\ Materials \& Critical Resources}
+\textbf{Lexicon:}
+copper concentrate; cathode; smelter; refinery; grade; ore body; resource estimate; lithium brine; spodumene; carbonate equivalent (LCE); nickel sulfate; cobalt hydroxide; manganese; rare earths; neodymium-praseodymium (NdPr); dysprosium; scandium; graphite anode; silicon anode; uranium yellowcake; enrichment; conversion; SWU; offtake agreement; recycling; black mass; hydrometallurgy; solvent extraction; tailings; royalty/streaming; capex intensity; cash cost (C1); ESG permit.
+
+\subsection*{4.\ Mobility \& Logistics}
+\textbf{Lexicon:}
+battery electric vehicle (BEV); plug-in hybrid (PHEV); charging station; DC fast charge; megawatt charging system (MCS); solid-state battery; LFP; NMC; e-axle; silicon carbide inverter; autonomous driving; ADAS; LiDAR; radar; HD map; over-the-air update; fleet telematics; warehouse automation; AMR; AGV; last-mile delivery; cross-dock; intermodal; cold chain; freight brokerage; ocean freight; air cargo; capacity utilization; dwell time.
+
+\subsection*{5.\ Health \& Human Performance}
+\textbf{Lexicon:}
+GLP-1; semaglutide; tirzepatide; obesity therapy; metabolic syndrome; HbA1c; cardiovascular outcomes trial (CVOT); gene editing; CRISPR; base editing; prime editing; AAV vector; CAR-T; bispecific antibody; RNAi; antisense oligonucleotide; biomarker; companion diagnostic; wearables; continuous glucose monitoring (CGM); remote patient monitoring; telehealth; electronic health record (EHR); clinical trial phase 2; CDMO; CMO; IND filing; FDA priority review; EMA CHMP; reimbursement; health economics (HEOR).
+
+\subsection*{6.\ Security, Defense \& Resilience}
+\textbf{Lexicon:}
+air defense; interceptor; loitering munition; guided rocket; radar cross-section; AESA radar; EW/ECM; command and control (C2); ISR; satellite imagery; hardened comms; secure datalink; cybersecurity; XDR; EDR; SASE; zero trust; identity access management; privileged access; OT security; critical infrastructure protection; red team; threat intel; SOC; munitions stockpile; replenishment contract; offset agreement; NATO spending; survivability; resilience; disaster recovery; business continuity.
+
+\subsection*{7.\ Financial Infrastructure \& Digital Assets}
+\textbf{Lexicon:}
+real-time payments; RTP; FedNow; instant settlement; ISO 20022; ACH modernization; card acquiring; payment gateway; tokenization (cards); network token; chargeback; interchange; BNPL; point-of-sale (POS); AML; KYC; sanctions screening; custody; qualified custodian; digital wallet; stablecoin; on-chain settlement; tokenized Treasuries; RWA; smart contract; permissioned blockchain; central securities depository (CSD); CCP; clearing; market data feed; matching engine; FIX gateway.
+
+\subsection*{8.\ Climate Adaptation, Water \& Environment}
+\textbf{Lexicon:}
+desalination; reverse osmosis; ultrafiltration; membrane bioreactor; water reuse; wastewater treatment; PFAS remediation; activated carbon; leak detection; non-revenue water; smart meter (AMI); flood defense; sea wall; wildfire mitigation; drought index; heat stress; climate resilience; catastrophe modeling; air quality monitoring; ESG assurance; MRV (measurement, reporting, verification); carbon accounting; nature-based solutions; reforestation credits; circular economy; waste-to-energy; landfill gas capture.
+
+\subsection*{9.\ Built Environment \& Industrial Systems}
+\textbf{Lexicon:}
+building management system (BMS); HVAC; chiller; heat exchanger; variable frequency drive (VFD); smart thermostat; occupancy sensor; digital twin; predictive maintenance; PLC; SCADA; machine vision; cobot; industrial robot; motion control; MES; OPC UA; additive manufacturing; 3D printing; industrial IoT; condition monitoring; safety relay; lockout/tagout; factory automation; OEE; brownfield retrofit; energy efficiency retrofit; demand-controlled ventilation.
+
+\subsection*{10.\ Consumer, Media \& Experiences}
+\textbf{Lexicon:}
+SVOD; AVOD; FAST channel; content licensing; theatrical window; AAA game; live-ops; in-app purchase; creator economy; influencer marketing; short-form video; social commerce; recommendation algorithm; user acquisition (UA); churn; MAU/DAU; engagement; AR/VR; mixed reality; experiential retail; luxury goods; premium pricing; brand equity; loyalty program; cross-border e-commerce; last-mile return; digital wallet checkout.
+
+\subsection*{11.\ Space \& Frontier Technologies}
+\textbf{Lexicon:}
+launch manifest; small-lift; rideshare; \emph{reusability}; fairing recovery; satellite bus; LEO constellation; MEO; GEO; Ka-band; optical inter-satellite link; ground station; TT\&C; Earth observation; SAR imaging; geospatial analytics; satellite IoT; spectrum allocation; ITU filing; debris mitigation; space tug; on-orbit servicing; space situational awareness (SSA); lunar payload; deep space network.
+
+\subsection*{12.\ Government, Education \& Public Tech}
+\textbf{Lexicon:}
+GovTech; e-government; identity verification; digital ID; eKYC; case management; benefits administration; tax filing portal; health exchange; electronic records; freedom of information portal; procurement platform; grants management; justice/courts software; 311 service; permit processing; open data; census platform; edtech LMS; student information system (SIS); digital assessment; proctoring; public safety CAD; RMS; body-worn camera; evidence management.
+
 \section{Index Construction (per Theme)}
 \textbf{Universe:} Developed+EM equities; float-adjusted mkt cap $>\$500$mm; median \$-ADV $> \$2$mm (90d).\\
 \textbf{Selection:} Choose 30--60 names prioritizing purity: always include top-decile $S_{i,t,k}$; then add by $S$ while respecting liquidity.\\
@@ -153,7 +204,7 @@ with caps: single name $\le 8\%$ (or $5\%$ UCITS), country $\le 25\%$.\\
 \textbf{Corporate Actions:} Standard free-float adjustments; preserve theme continuity across mergers/ticker changes.
 
 \section{Implementation Notes}
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item \textbf{News KG construction:} Ingest structured news with entity and theme tagging; store edges with timestamps and source scores. Use decay $\exp(-\lambda\Delta t)$ and normalize per-source to avoid publisher bias.
 \item \textbf{Metapath set $\mathcal{P}$:} Start with $\{C\!\to\!N\!\to\!T,\, C\!\to\!C_{\text{supplies}}\!\to\!N\!\to\!T,\, C\!\to\!N\!\to\!N\!\to\!T\}$; tune $\alpha_p$ by maximizing out-of-sample purity.
 \item \textbf{Text features $\hat{T}$:} Sentence-embedding similarity between issuer disclosures/transcripts and curated theme dictionaries; optional supervised fine-tune.
