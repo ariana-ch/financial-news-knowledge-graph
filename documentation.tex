@@ -1,0 +1,167 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{TICS: A Thematic Industry Classification Standard for Equity Indices}
+\author{(for internal use)}
+\date{September 2025}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+This document defines a \emph{Thematic Industry Classification Standard} (TICS) to serve as a GICS-like sector system for thematic indices. Constituents are assigned to themes primarily via a \textbf{news knowledge graph} (KG) that links issuers to theme nodes through multi-hop, typed relations. The model allows expansion with additional fundamentals/alt-data signals (with coefficients set to zero if unused).
+
+\section{Taxonomy (Level 1 \texorpdfstring{$\rightarrow$}{->} Level 2) with Examples}
+Each supersector includes a short definition and three liquid, illustrative tickers (not investment advice).
+
+\begin{enumerate}
+\item \textbf{Compute \& Digital Infrastructure}\\
+\emph{Definition:} Firms that design, build, or operate hardware/software/facilities powering large-scale compute, networking, storage, and edge.\\
+\emph{Examples:} NVIDIA (NVDA), Broadcom (AVGO), Equinix (EQIX).
+
+\item \textbf{Energy \& Power Systems}\\
+\emph{Definition:} Generation, transmission, distribution, and conversion technologies/services supplying reliable electric power on- and off-grid.\\
+\emph{Examples:} Schneider Electric (SU FP), Eaton (ETN), NextEra Energy (NEE).
+
+\item \textbf{Materials \& Critical Resources}\\
+\emph{Definition:} Metals, minerals, chemicals, and recycling essential to electrification, compute, mobility, and clean energy supply chains.\\
+\emph{Examples:} Freeport-McMoRan (FCX), Cameco (CCJ), Albemarle (ALB).
+
+\item \textbf{Mobility \& Logistics}\\
+\emph{Definition:} Vehicles, components, charging/fueling, autonomy/ADAS, robotics, and logistics networks enabling movement of people and goods.\\
+\emph{Examples:} Tesla (TSLA), BYD (1211 HK), DSV (DSV DC).
+
+\item \textbf{Health \& Human Performance}\\
+\emph{Definition:} Biopharma, medtech, diagnostics, and digital health improving longevity, metabolic/chronic-care outcomes, and real-time monitoring.\\
+\emph{Examples:} Novo Nordisk (NOVO-B DC), Eli Lilly (LLY), Dexcom (DXCM).
+
+\item \textbf{Security, Defense \& Resilience}\\
+\emph{Definition:} Defense primes/suppliers, cyber and critical-infrastructure security, and resilience technologies for contested/disrupted environments.\\
+\emph{Examples:} BAE Systems (BA/ LN), Lockheed Martin (LMT), RTX (RTX).
+
+\item \textbf{Financial Infrastructure \& Digital Assets}\\
+\emph{Definition:} Payments rails, merchant acquiring, market plumbing, custody/compliance, and tokenization platforms enabling real-time, interoperable finance.\\
+\emph{Examples:} Adyen (ADYEN NA), Fiserv (FI), Coinbase (COIN).
+
+\item \textbf{Climate Adaptation, Water \& Environment}\\
+\emph{Definition:} Water treatment/desalination, monitoring, metering, and environmental services mitigating physical climate risks and resource scarcity.\\
+\emph{Examples:} Xylem (XYL), Ecolab (ECL), Veolia (VIE FP).
+
+\item \textbf{Built Environment \& Industrial Systems}\\
+\emph{Definition:} Automation, controls, building systems, and industrial technology improving productivity, safety, and energy efficiency.\\
+\emph{Examples:} Siemens (SIE GR), Rockwell Automation (ROK), Honeywell (HON).
+
+\item \textbf{Consumer, Media \& Experiences}\\
+\emph{Definition:} Platforms/brands monetizing attention and discretionary spend via streaming, interactive content, creator ecosystems, and premium goods.\\
+\emph{Examples:} Netflix (NFLX), Roblox (RBLX), LVMH (MC FP).
+
+\item \textbf{Space \& Frontier Technologies}\\
+\emph{Definition:} Space launch, LEO communications, Earth-observation, and enabling components/data platforms extending operations beyond Earth.\\
+\emph{Examples:} Rocket Lab (RKLB), Iridium (IRDM), SES (SESG LX).
+
+\item \textbf{Government, Education \& Public Tech}\\
+\emph{Definition:} Software/services tailored to public sector and education: identity, case management, citizen services, and analytics.\\
+\emph{Examples:} Palantir (PLTR), Tyler Technologies (TYL), Pearson (PSON LN).
+\end{enumerate}
+
+\section{Graph-Centric Assignment Model}
+Let $i$ index issuers, $k$ index themes, $t$ index time. Build a heterogeneous KG with node sets
+$\mathcal{V} = \mathcal{C}\cup\mathcal{T}\cup\mathcal{N}$ (companies, themes, news articles) and typed edges
+$\mathcal{E} = \{(u \xrightarrow{r} v)\}$ with relation $r\in\mathcal{R}$ (e.g., \textsf{mentions}, \textsf{supplies}, \textsf{partners}, \textsf{acquires}, \textsf{funds}, \textsf{geo}, \textsf{topic}).
+Edge weights $w_{uvr,t}$ reflect frequency, source quality, and \emph{recency} via exponential decay $\exp(-\lambda \Delta t)$.
+
+\subsection*{Graph Exposure Score}
+Define a set of metapaths $\mathcal{P}$ that connect companies to themes (examples: $C\!\to\!N\!\to\!T$, $C\!\to\!C\!\to\!N\!\to\!T$, $C\!\to\!C$ (supply) $\!\to\!N\!\to\!T$).
+Let $A_r$ be the row-stochastic adjacency for relation type $r$ at time $t$.
+For metapath $p=(r_1,\dots,r_L)$, define the path operator $M_p=\prod_{\ell=1}^L A_{r_\ell}$ (matrix product in order).
+The \emph{graph-based} theme linkage for issuer $i$ and theme $k$ is
+\begin{equation}
+g_{i,t,k} \;=\; \sum_{p\in\mathcal{P}} \alpha_p \big[ \mathbf{e}_i^\top M_p \mathbf{u}_k \big],
+\qquad \alpha_p\ge 0,\; \sum_p \alpha_p = 1,
+\label{eq:graphscore}
+\end{equation}
+where $\mathbf{e}_i$ selects issuer $i$ and $\mathbf{u}_k$ selects theme node $k$ (or a cluster of synonyms).%
+\footnote{Alternatively, use personalized PageRank from $i$ to the theme subgraph:
+$g_{i,t,k}=\mathbf{e}_i^\top \big( (1-\beta)\sum_{h=0}^\infty \beta^h A^h \big)\mathbf{u}_k$ with restart vector on theme nodes.}
+
+\subsection*{Auxiliary Signals (optional)}
+Let the following be z-scored within region/cap buckets and exponentially smoothed (half-life $\approx 12$ months):
+\begin{align*}
+&\hat{R}_{i,t,k} \text{ (revenue share from theme $k$)},\quad
+\hat{G}_{i,t,k} \text{ (growth of theme-linked revenue)},\\
+&\hat{C}_{i,t,k} \text{ (CapEx share)},\quad
+\hat{RD}_{i,t,k} \text{ (R\&D share)},\quad
+\hat{P}_{i,t,k} \text{ (patent intensity; CPC-aligned)},\\
+&\hat{H}_{i,t,k} \text{ (hiring intensity in theme roles)},\quad
+\hat{T}_{i,t,k} \text{ (text similarity: filings/transcripts/news)},\\
+&\hat{S}_{i,t,k} \text{ (supply-chain dependence on theme $k$)}.
+\end{align*}
+
+\subsection*{Composite Purity Score and Assignment}
+Combine graph and auxiliary signals via a calibrated link function $\sigma(\cdot)$ (e.g., logistic or isotonic mapping to $[0,1]$):
+\begin{equation}
+\boxed{
+S_{i,t,k}
+=
+\sigma\!\left(
+\theta_g\, g_{i,t,k}
++ \theta_R \hat{R}_{i,t,k}
++ \theta_G \hat{G}_{i,t,k}
++ \theta_C \hat{C}_{i,t,k}
++ \theta_{RD} \hat{RD}_{i,t,k}
++ \theta_P \hat{P}_{i,t,k}
++ \theta_H \hat{H}_{i,t,k}
++ \theta_T \hat{T}_{i,t,k}
++ \theta_S \hat{S}_{i,t,k}
+\right)
+}
+\label{eq:composite}
+\end{equation}
+Coefficients $\Theta=\{\theta_\bullet\}$ are nonnegative and may be set to zero to exclude a channel.%
+Calibration targets: human-labeled firm--theme pairs, audited revenue purity, and stability constraints.
+
+\paragraph{Primary Theme (mutually exclusive).}
+Let $S_{i,t,(1)}$ and $S_{i,t,(2)}$ be the top two theme scores for issuer $i$ at time $t$. Assign
+\[
+k^\star(i,t)=\arg\max_k S_{i,t,k}
+\quad\text{if}\quad
+S_{i,t,(1)} \ge \tau_1
+\;\text{ and }\;
+S_{i,t,(1)} - S_{i,t,(2)} \ge \Delta,
+\]
+else assign the issuer to the \emph{L1 supersector} of the top theme and flag as ``diversified''. Typical values: $\tau_1\in[0.5,0.7]$, $\Delta\in[0.05,0.15]$.
+
+\paragraph{Secondary Tags (overlapping).}
+Optionally tag up to two additional themes with $S_{i,t,k} \ge \tau_2$ (e.g., $\tau_2\approx 0.45$).
+
+\paragraph{Turnover Control.}
+Apply a two-quarter hysteresis before changing a primary assignment; impose buffers on $\tau_1,\Delta$ at rebalances.
+
+\section{Index Construction (per Theme)}
+\textbf{Universe:} Developed+EM equities; float-adjusted mkt cap $>\$500$mm; median \$-ADV $> \$2$mm (90d).\\
+\textbf{Selection:} Choose 30--60 names prioritizing purity: always include top-decile $S_{i,t,k}$; then add by $S$ while respecting liquidity.\\
+\textbf{Weights:} Purity-tilted cap weighting
+\begin{equation}
+w_i \propto \mathrm{Cap}_i^{\alpha} \cdot \big(S_{i,t,k}\big)^{\beta},
+\qquad \alpha\in[0,1],\; \beta\ge 0,
+\end{equation}
+with caps: single name $\le 8\%$ (or $5\%$ UCITS), country $\le 25\%$.\\
+\textbf{Rebalance:} Quarterly; fast-entry for IPOs/spin-offs with top-decile $S$ and liquidity.\\
+\textbf{Corporate Actions:} Standard free-float adjustments; preserve theme continuity across mergers/ticker changes.
+
+\section{Implementation Notes}
+\begin{itemize}
+\item \textbf{News KG construction:} Ingest structured news with entity and theme tagging; store edges with timestamps and source scores. Use decay $\exp(-\lambda\Delta t)$ and normalize per-source to avoid publisher bias.
+\item \textbf{Metapath set $\mathcal{P}$:} Start with $\{C\!\to\!N\!\to\!T,\, C\!\to\!C_{\text{supplies}}\!\to\!N\!\to\!T,\, C\!\to\!N\!\to\!N\!\to\!T\}$; tune $\alpha_p$ by maximizing out-of-sample purity.
+\item \textbf{Text features $\hat{T}$:} Sentence-embedding similarity between issuer disclosures/transcripts and curated theme dictionaries; optional supervised fine-tune.
+\item \textbf{Calibration $\sigma$:} Fit isotonic regression mapping raw sums to empirical purity probability on a labeled validation set.
+\item \textbf{Stability:} Exponential smoothing of features; assignment hysteresis; quarterly review of $\Theta$ with guardrails (L2 penalty toward prior $\Theta$).
+\end{itemize}
+
+\section{Deliverables}
+Taxonomy YAML, KG schema, scoring pipeline (Eq.~\ref{eq:graphscore}--\ref{eq:composite}), assignment report, purity/backtest metrics, and factsheets for the 12 supersectors and selected Level-2 indices.
+
+\end{document}
